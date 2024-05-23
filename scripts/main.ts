@@ -12,4 +12,13 @@ for(let i = 2; i < (totalPages + 1); i++) {
 
 posts.forEach((post) => {
   Deno.writeTextFile(`./raw/${post.id}.json`, JSON.stringify(post));
+  Deno.writeTextFile(`./content/pool/${post.id}.html`, JSON.stringify({
+    date: post.date,
+    draft: false,
+    params: {
+      author: post.author
+    },
+    title: post.title.rendered,
+    summary: post.excerpt.rendered
+  }) + "\n" + post.content.rendered);
 });

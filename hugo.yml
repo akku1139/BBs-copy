@@ -33,5 +33,14 @@ params:
 
 menu:
   header:
-  sidebar:
-  footer:
+    - name: Home
+      url: /
+      weight: -100
+    - name: About
+      url: /about
+      weight: -100
+    - name: Information
+      url: /
+      weight: -100
+  # sidebar:
+  # footer:
