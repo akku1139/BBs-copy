@@ -1,7 +1,7 @@
 on:
   workflow_dispatch:
   schedule:
-    - cron: '27 3 * * *'
+    - cron: '47 5 * * *'
 
 concurrency:
     group: main
@@ -25,7 +25,7 @@ jobs:
           path: /home/runner/.cache/deno/
           key: deno-deps
 
-      - run: deno run --allow-net ./scripts/external/main.ts
+      - run: deno run --allow-net ./scripts/main.ts
 
       - run: |
          if [ -n "$(git status --porcelain)" ]; then
