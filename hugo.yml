@@ -45,3 +45,6 @@ menu:
       weight: -100
   # sidebar:
   # footer:
+
+disableKinds:
+  - rss

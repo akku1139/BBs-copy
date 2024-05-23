@@ -20,7 +20,6 @@ posts.forEach((post) => {
     },
     title: post.title.rendered,
     summary: post.excerpt.rendered,
-    slug: post.slug,
-
+    slug: post.id.toString(),
   }) + "\n" + post.content.rendered);
 });
