@@ -10,5 +10,5 @@ for(let i = 2; i < (totalPages + 1); i++) {
 }
 
 posts.forEach((post) => {
-  Deno.writeTextFile(`./raw/${post.id}`, JSON.stringify(post));
+  Deno.writeTextFile(`./raw/${post.id}.json`, JSON.stringify(post));
 });
