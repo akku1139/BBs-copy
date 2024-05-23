@@ -19,6 +19,8 @@ posts.forEach((post) => {
       author: post.author
     },
     title: post.title.rendered,
-    summary: post.excerpt.rendered
+    summary: post.excerpt.rendered,
+    slug: post.slug,
+
   }) + "\n" + post.content.rendered);
 });
