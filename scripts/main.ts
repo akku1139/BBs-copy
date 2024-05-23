@@ -22,5 +22,5 @@ posts.forEach((post) => {
     summary: post.excerpt.rendered,
     url: new URL(post.link).pathname
   }) + "\n" + post.content.rendered
-    + `\r<a href="${post.link}">元記事: ${post.link}</a>`);
+    + `\r元記事: <a href="${post.link}">${post.link}</a>`);
 });
