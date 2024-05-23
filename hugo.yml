@@ -1,0 +1,32 @@
+languageCode: ja
+theme: hugo-theme-salt
+title: BlogBooks Copy
+copyright: CC BY-NC 4.0 (BlogBooks)
+
+taxonomies:
+  category: categories
+  term: terms
+
+hasCJKLanguage: true
+summaryLength: 200
+paginate: 10
+
+# related:
+#   includeNewer: true
+#   indices:
+#     - name: keywords
+#       weight: 100
+#     - name: tags
+#       weight: 90
+#     - name: date
+#       weight: 10
+#   threshold: 80
+#   toLower: false
+
+params:
+  description: BlogBooksの非公式コピーサイト
+  icon: image/icon.png
+  images:
+    - image/og_large.png
+  notFoundImage: image/404.png
+  dafaultNoimage: image/default_noimage.png
