@@ -20,6 +20,6 @@ posts.forEach((post) => {
     },
     title: post.title.rendered,
     summary: post.excerpt.rendered,
-    slug: post.id.toString(),
+    url: new URL(post.link).pathname
   }) + "\n" + post.content.rendered);
 });
