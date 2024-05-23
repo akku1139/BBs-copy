@@ -20,7 +20,9 @@ posts.forEach((post) => {
     },
     title: post.title.rendered,
     summary: post.excerpt.rendered,
-    url: new URL(post.link).pathname
+    url: new URL(post.link).pathname,
+    tags: post.nishiki_blocks_pro.terms.map((t) => t.slug),
+    categories: post.nishiki_blocks_pro.terms.map((t) => t.name),
   }) + "\n" + post.content.rendered
     + `\r元記事: <a href="${post.link}">${post.link}</a>`);
 });
