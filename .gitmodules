@@ -1,0 +1,3 @@
+[submodule "themes/salt"]
+	path = themes/salt
+	url = https://github.com/okdyy75/hugo-theme-salt.git
