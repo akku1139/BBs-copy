@@ -48,3 +48,6 @@ menu:
 
 disableKinds:
   - rss
+
+permalinks:
+  pool: /
