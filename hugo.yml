@@ -30,3 +30,8 @@ params:
     - image/og_large.png
   notFoundImage: image/404.png
   dafaultNoimage: image/default_noimage.png
+
+menu:
+  header:
+  sidebar:
+  footer:
