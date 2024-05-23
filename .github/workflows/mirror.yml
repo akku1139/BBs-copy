@@ -26,7 +26,7 @@ jobs:
           path: /home/runner/.cache/deno/
           key: deno-deps
 
-      - run: deno run --allow-net ./scripts/main.ts
+      - run: deno run --allow-net --allow-read --allow-write ./scripts/main.ts
 
       - run: |
           if [ -n "$(git status --porcelain)" ]; then
