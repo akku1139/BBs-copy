@@ -44,7 +44,7 @@ posts.forEach((post) => {
 
     let res: Response;
 
-    while(true) {
+    for(let i = 0; i < 10; i++) {
       try {
         res = await fetch(url);
         break;
