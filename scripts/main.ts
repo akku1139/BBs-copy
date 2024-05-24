@@ -55,7 +55,8 @@ posts.forEach((post) => {
     }
 
     if(!res.ok) {
-      console.error("HTTP Error", res.status, res.statusText);
+      console.error("HTTP Error", res.url, res.status, res.statusText);
+      return;
     }
 
     Deno.writeFile(
