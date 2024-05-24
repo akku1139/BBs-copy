@@ -1,6 +1,8 @@
 import type { WP_REST_API_Posts } from "./types/wp.ts";
 import "./types/deno.d.ts";
 
+const sleepMs = (ms: Number) => new Promise(resolve => setTimeout(resolve, ms));
+
 const firstRes = await fetch("https://blogbooks.net/wp-json/wp/v2/posts?page=1&per_page=100");
 let posts: WP_REST_API_Posts = await firstRes.json();
 
@@ -40,9 +42,25 @@ posts.forEach((post) => {
     await Deno.mkdir(path.split("/").slice(0, -1).join("/"), {recursive: true});
     // /^\/.+\//.exec(path)[0]
 
+    let res: Response;
+
+    while(true) {
+      try {
+        res = await fetch(url);
+        break;
+      } catch(e: Error) {
+        console.log(e);
+        await sleepMs(5000);
+      }
+    }
+
+    if(!res.ok) {
+      console.error("HTTP Error", res.status, res.statusText);
+    }
+
     Deno.writeFile(
       path,
-      (await fetch(url)).body,
+      (res).body,
       {write: true, createNew: true}
     ).catch((e:Error) => {
       if(e.name === "AlreadyExists") {
