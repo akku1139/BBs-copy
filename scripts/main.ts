@@ -44,7 +44,7 @@ posts.forEach((post) => {
   // Fetch resources
   [...new Set(
     // post.content.rendered.match(/"https:\/\/blogbooks\.net\/wp-content\/(.+?)"/g) ?? [])
-    post.content.rendered.match(/https:\/\/blogbooks\.net\/wp-content\/(.+?)["\s]/g)  ?? [])
+    post.content.rendered.match(/https:\/\/blogbooks\.net\/wp-content\/(.+?)["\s<]/g)  ?? [])
   ].map((u) => u.slice(0, -1)).forEach(async (url) => {
     const path = "./static" + new URL(url).pathname;
     
