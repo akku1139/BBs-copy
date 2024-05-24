@@ -33,6 +33,11 @@ params:
   dafaultNoimage: image/default_noimage.png
 
 menu:
+  main:
+    - name: About
+      pageRef: /about
+      weight: 10
+
   header:
     - name: Home
       url: /
