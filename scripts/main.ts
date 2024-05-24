@@ -34,7 +34,7 @@ posts.forEach((post) => {
   [...new Set(post.content.rendered.match(/"https:\/\/blogbooks\.net\/wp-content\/(.+?)"/g) ?? [])].map((u) => u.slice(1, -1)).forEach(async (url) => {
     const path = "./static" + new URL(url).pathname;
 
-    await Deno.mkdir(/^\/.+\//.exec(path), {recursive: true});
+    await Deno.mkdir(/^\/.+\//.exec(path)[0], {recursive: true});
     // path.split("/").slice(0, -1).join("/")
 
     Deno.writeFile(
