@@ -4,12 +4,12 @@ import "./types/deno.d.ts";
 const sleepMs = (ms: Number) => new Promise(resolve => setTimeout(resolve, ms));
 
 const fileExists = async (path: string): Promise<boolean> => {
-	try {
-	  const file = await Deno.stat(path);   
-	  return file.isFile();
-	} catch (e) {
-	  return false;
-	}
+  try {
+    const file = await Deno.stat(path);
+    return file.isFile;
+  } catch (e) {
+    return false;
+  }
 };
 
 const firstRes = await fetch("https://blogbooks.net/wp-json/wp/v2/posts?page=1&per_page=100");
