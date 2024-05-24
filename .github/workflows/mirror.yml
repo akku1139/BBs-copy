@@ -28,6 +28,9 @@ jobs:
 
       - run: deno run --allow-net --allow-read --allow-write ./scripts/main.ts
 
+      - run: find -type f -print0 | xargs -0 ls -l | awk '{if($5 > 25*1024*1024) print $9}' | tee /dev/stderr | xargs rm
+        # remove too big files
+
       - run: |
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "github-actions[bot]"
