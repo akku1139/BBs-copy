@@ -33,10 +33,15 @@ posts.forEach((post) => {
   // Fetch resources
   [...new Set(post.content.rendered.match(/"https:\/\/blogbooks\.net\/wp-content\/(.+?)"/g) ?? [])].map((u) => u.slice(1, -1)).forEach(async (url) => {
     const path = "./static" + new URL(url).pathname;
-    await Deno.mkdir(path, {recursive: true});
-    const res = await fetch(url);
-    const data = res.body
-    Deno.writeFile(path, data, {write: true, createNew: true}).catch((e:Error) => {
+
+    await Deno.mkdir(/^\/.+\//.exec(path), {recursive: true});
+    // path.split("/").slice(0, -1).join("/")
+
+    Deno.writeFile(
+      path,
+      (await fetch(url)).body,
+      {write: true, createNew: true}
+    ).catch((e:Error) => {
       if(e.name === "AlreadyExists") {
         return
       }
