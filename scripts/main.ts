@@ -31,7 +31,10 @@ posts.forEach((post) => {
     + `\r元記事: <a href="${post.link}">${post.link}</a>`);
 
   // Fetch resources
-  [...new Set(post.content.rendered.match(/"https:\/\/blogbooks\.net\/wp-content\/(.+?)"/g) ?? [])].map((u) => u.slice(1, -1)).forEach(async (url) => {
+  [...new Set(
+    // post.content.rendered.match(/"https:\/\/blogbooks\.net\/wp-content\/(.+?)"/g) ?? [])
+    decodeURIComponent(post.content.rendered).match(/https:\/\/blogbooks\.net\/wp-content\/(.+?)["\s]/g)  ?? [])
+  ].map((u) => u.slice(0, -1)).forEach(async (url) => {
     const path = "./static" + new URL(url).pathname;
 
     await Deno.mkdir(path.split("/").slice(0, -1).join("/"), {recursive: true});
