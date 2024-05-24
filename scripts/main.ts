@@ -31,7 +31,7 @@ posts.forEach((post) => {
     + `\r元記事: <a href="${post.link}">${post.link}</a>`);
 
   // Fetch resources
-  post.content.rendered.match(/"https:\/\/blogbooks\.net\/wp-content\/(.+?)"/g).map((u) => u.slice(1, -1)).forEach((url) => {
+  post.content.rendered.match(/"https:\/\/blogbooks\.net\/wp-content\/(.+?)"/g).map((u) => u.slice(1, -1)).forEach(async (url) => {
     const path = "./static" + new URL(url).pathname;
     await Deno.mkdir(path, {recursive: true});
     Deno.writeFile(path, await (await fetch(url)).body(), {write: true, createNew: true}).catch(console.log);
