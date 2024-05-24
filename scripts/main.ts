@@ -35,7 +35,7 @@ posts.forEach((post) => {
     const path = "./static" + new URL(url).pathname;
     await Deno.mkdir(path, {recursive: true});
     const res = await fetch(url);
-    const data = await res.body();
+    const data = res.body
     Deno.writeFile(path, data, {write: true, createNew: true}).catch(console.log);
   });
 });
