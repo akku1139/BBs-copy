@@ -3,6 +3,15 @@ import "./types/deno.d.ts";
 
 const sleepMs = (ms: Number) => new Promise(resolve => setTimeout(resolve, ms));
 
+const fileExists = async (path: string): Promise<boolean> => {
+	try {
+	  const file = await Deno.stat(path);   
+	  return file.isFile();
+	} catch (e) {
+	  return false;
+	}
+};
+
 const firstRes = await fetch("https://blogbooks.net/wp-json/wp/v2/posts?page=1&per_page=100");
 let posts: WP_REST_API_Posts = await firstRes.json();
 
@@ -38,6 +47,11 @@ posts.forEach((post) => {
     post.content.rendered.match(/https:\/\/blogbooks\.net\/wp-content\/(.+?)["\s]/g)  ?? [])
   ].map((u) => u.slice(0, -1)).forEach(async (url) => {
     const path = "./static" + new URL(url).pathname;
+    
+    if(await fileExists(path)) {
+      return;
+    }
+    console.log("Fetch ", path);
 
     await Deno.mkdir(path.split("/").slice(0, -1).join("/"), {recursive: true});
     // /^\/.+\//.exec(path)[0]
