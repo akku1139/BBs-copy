@@ -19,7 +19,7 @@ const totalPages = Number(firstRes.headers.get("X-Wp-Totalpages"));
 
 for(let i = 2; i < (totalPages + 1); i++) {
   console.log(`page: ${i}`);
-  posts.concat(await (await fetch(`https://blogbooks.net/wp-json/wp/v2/posts?page=${i}&per_page=100`)).json());
+  posts = [...posts, ...(await (await fetch(`https://blogbooks.net/wp-json/wp/v2/posts?page=${i}&per_page=100`)).json())];
 }
 
 posts.forEach((post) => {
@@ -47,7 +47,7 @@ posts.forEach((post) => {
     post.content.rendered.match(/https:\/\/blogbooks\.net\/wp-content\/(.+?)["\s<]/g)  ?? [])
   ].map((u) => u.slice(0, -1)).forEach(async (url) => {
     const path = "./static" + new URL(url).pathname;
-    
+
     if(await fileExists(path)) {
       return;
     }
