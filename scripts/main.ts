@@ -45,7 +45,7 @@ posts.forEach((post) => {
   [...new Set(
     // post.content.rendered.match(/"https:\/\/blogbooks\.net\/wp-content\/(.+?)"/g) ?? [])
     post.content.rendered.match(/https:\/\/blogbooks\.net\/wp-content\/(.+?)["\s<]/g)  ?? [])
-  ].map((u) => u.slice(0, -1)).forEach(async (url) => {
+  ].map((u) => u.slice(0, -1)).forEach(async (url, index) => setTimeout(() => {
     const path = "./static" + new URL(url).pathname;
 
     if(await fileExists(path)) {
@@ -83,5 +83,5 @@ posts.forEach((post) => {
       }
       console.log(e);
     });
-  });
+  }, 1000));
 });
