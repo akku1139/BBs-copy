@@ -28,7 +28,7 @@ jobs:
 
       - run: deno run --allow-net --allow-read --allow-write ./scripts/main.ts
 
-      - run: find ./static -size +25M | xargs rm
+      - run: find ./static -size +25M | tee /dev/stderr | xargs rm
         # remove too big files
 
       - run: |

@@ -1,23 +1,20 @@
-languageCode: ja
-theme: hugo-bearcub
 title: BlogBooks (Copy)
 copyright: CC BY-NC 4.0 (BlogBooks)
+languageCode: ja
+timeZone: Asia/Tokyo
+
+theme: hugo-bearcub
 
 taxonomies:
   category: category
   tag: tag
 
 hasCJKLanguage: true
-summaryLength: 200
-paginate: 10
 
 params:
   description: BlogBooksの非公式コピーサイト
-  icon: image/icon.png
-  images:
-    - image/og_large.png
-  notFoundImage: image/404.png
-  dafaultNoimage: image/default_noimage.png
+  madeWith: made with [Bear Cub](https://github.com/clente/hugo-bearcub)
+  favicon: wp-content/uploads/2022/08/logo-2.png
 
 menu:
   main:
@@ -32,6 +29,3 @@ menu:
     - name: Tag
       pageRef: /tag
       weight: 30
-
-# disableKinds:
-  # - rss
