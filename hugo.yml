@@ -5,8 +5,8 @@ title: BlogBooks (Copy)
 copyright: CC BY-NC 4.0 (BlogBooks)
 
 taxonomies:
-  category: categories
-  tag: tags
+  category: category
+  tag: tag
 
 hasCJKLanguage: true
 summaryLength: 200
