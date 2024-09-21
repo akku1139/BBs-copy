@@ -1,5 +1,4 @@
 languageCode: ja
-# theme: salt
 theme: hugo-bearcub
 title: BlogBooks (Copy)
 copyright: CC BY-NC 4.0 (BlogBooks)
@@ -11,18 +10,6 @@ taxonomies:
 hasCJKLanguage: true
 summaryLength: 200
 paginate: 10
-
-# related:
-#   includeNewer: true
-#   indices:
-#     - name: keywords
-#       weight: 100
-#     - name: tags
-#       weight: 90
-#     - name: date
-#       weight: 10
-#   threshold: 80
-#   toLower: false
 
 params:
   description: BlogBooksの非公式コピーサイト
@@ -38,18 +25,13 @@ menu:
       pageRef: /about
       weight: 10
 
-  header:
-    - name: Home
-      url: /
-      weight: -100
-    - name: About
-      url: /about
-      weight: -100
-    - name: Information
-      url: /
-      weight: -100
-  # sidebar:
-  # footer:
+    - name: Category
+      pageRef: /category
+      weight: 20
 
-disableKinds:
-  - rss
+    - name: Tag
+      pageRef: /tag
+      weight: 30
+
+# disableKinds:
+  # - rss

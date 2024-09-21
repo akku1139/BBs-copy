@@ -28,7 +28,7 @@ jobs:
 
       - run: deno run --allow-net --allow-read --allow-write ./scripts/main.ts
 
-      - run: find -type d -name '.git' -prune -o -type f -print0 | xargs -0 ls -l | awk '{if($5 > 25*1024*1024) print $9}' | tee /dev/stderr | xargs rm
+      - run: find ./static -size +25M | xargs rm
         # remove too big files
 
       - run: |

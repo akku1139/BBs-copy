@@ -23,9 +23,6 @@ for(let i = 2; i < (totalPages + 1); i++) {
 }
 
 posts.forEach((post) => {
-  // Write Raw Datas
-  Deno.writeTextFile(`./raw/${post.id}.json`, JSON.stringify(post));
-
   // Write Contents
   Deno.writeTextFile(`./content/pool/${post.id}.html`, JSON.stringify({
     date: post.date,
@@ -38,7 +35,7 @@ posts.forEach((post) => {
     url: new URL(post.link).pathname,
     tags: decodeURIComponent(post.nishiki_blocks_pro.terms.map((t) => t.slug)),
     categories: post.nishiki_blocks_pro.category.map((t) => t.name),
-  }) + "\n" + post.content.rendered.replaceAll("https://blogbooks.net/wp-content/", "/wp-content/")
+  }, null, 2) + "\n" + post.content.rendered.replaceAll("https://blogbooks.net/wp-content/", "/wp-content/")
     + `\r元記事: <a href="${post.link}">${post.link}</a>`);
 
   // Fetch resources
