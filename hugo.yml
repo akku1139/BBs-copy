@@ -16,6 +16,10 @@ params:
   madeWith: made with [Bear Cub](https://github.com/clente/hugo-bearcub)
   favicon: wp-content/uploads/2022/08/logo-2.png
 
+permalinks:
+  term:
+    category: /:slug/
+
 menu:
   main:
     - name: About

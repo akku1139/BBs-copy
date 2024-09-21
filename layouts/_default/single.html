@@ -33,14 +33,21 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   {{ with .Params.author }}· {{.}}{{ end }}
 </p>
 {{ end }}
-<content>
-  {{ .Content }}
-</content>
 <p>
+  Category:
+  {{ range (.GetTerms "category") }}
+    <a class="blog-tags" href="{{ .RelPermalink }}">{{ lower .LinkTitle }}</a>
+  {{ end }}
+</p>
+<p>
+  Tag:
   {{ range (.GetTerms "tag") }}
     <a class="blog-tags" href="{{ .RelPermalink }}">#{{ lower .LinkTitle }}</a>
   {{ end }}
 </p>
+<content>
+  {{ .Content }}
+</content>
 {{ if not .Params.hideReply }}
 {{ with .Site.Params.author.email }}
   <p>
