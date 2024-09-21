@@ -1,12 +1,12 @@
 languageCode: ja
 # theme: salt
 theme: hugo-bearcub
-title: BlogBooks Copy
+title: BlogBooks (Copy)
 copyright: CC BY-NC 4.0 (BlogBooks)
 
 taxonomies:
   category: categories
-  term: terms
+  tag: tags
 
 hasCJKLanguage: true
 summaryLength: 200
