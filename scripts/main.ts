@@ -36,7 +36,7 @@ posts.forEach((post) => {
     tag: post.nishiki_blocks_pro.terms.map((t) => decodeURIComponent(t.slug)),
     category: post.nishiki_blocks_pro.category.map((t) => t.name),
   }, null, 2) + "\n" + post.content.rendered.replaceAll("https://blogbooks.net/wp-content/", "/wp-content/")
-    + `\r元記事: <a href="${post.link}">${post.link}</a>`);
+    + `\n元記事: <a href="${post.link}">${post.link}</a>`);
 
   // Fetch resources
   [...new Set(
