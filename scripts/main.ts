@@ -1,7 +1,7 @@
 import type { WP_REST_API_Posts } from "./types/wp.ts";
 import "./types/deno.d.ts";
 
-const sleepMs = (ms: Number) => new Promise(resolve => setTimeout(resolve, ms));
+const sleepMs = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 const fileExists = async (path: string): Promise<boolean> => {
   try {
@@ -59,7 +59,7 @@ posts.forEach((post) => {
       try {
         res = await fetch(url);
         break;
-      } catch(e: Error) {
+      } catch(e) {
         console.log(e);
         await sleepMs(5000);
       }
