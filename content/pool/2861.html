@@ -1,0 +1,95 @@
+{
+  "date": "2023-04-07T13:44:22",
+  "draft": false,
+  "params": {
+    "author": 17
+  },
+  "title": "ChromebookにLinux Mintをインストールする",
+  "summary": "～～最低条件～～・デベロッパーモードであることが必要です。・USB3.0以上のUSBと、32GB以上&#8230;",
+  "url": "/chromebook/2861/",
+  "tags": [
+    "chromebook",
+    "ブロック回避",
+    "chrome",
+    "chromebook",
+    "クローム",
+    "クロームブック",
+    "回避",
+    "unlock"
+  ],
+  "categories": [
+    "chromebook",
+    "ブロック回避"
+  ]
+}
+
+<p class="is-style-nishiki-blocks-pro-paragraph-warning-01">～～最低条件～～<br>・デベロッパーモードであることが必要です。<br>・USB3.0以上のUSBと、32GB以上のストレージが必要です<br>・もう1台パソコンが必要です。<br><br>あとくそめんどくさいです</p>
+
+
+
+<div class="wp-block-group"><div class="wp-block-group__inner-container is-layout-constrained wp-block-group-is-layout-constrained">
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide"/>
+</div></div>
+
+
+
+<p class="has-text-align-center"><strong>手順</strong></p>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide"/>
+
+
+
+<p>自分のパソコンで、「Disk Management」を開きます。<br>C;を右クリックし、縮小を選択します。<br>パーティションを8192MB縮小します。<br>これで、8GBの空き容量ができます。<br>空き領域を右クリックし、「新しいボリューム」を選択します。<br>FAT32としてフォーマットし、Installerと名付ける。<br>8192MBのストレージを与える。<br><br>次に<a rel="noreferrer noopener" href="https://www.linuxmint.com/edition.php?id=299" data-type="URL" data-id="https://www.linuxmint.com/edition.php?id=299" target="_blank">https://www.linuxmint.com/edition.php?id=299</a>から「Torrent Download」をクリックします。<br> 64-Bit &#8220;をクリックし、BitTorrentクライアントでファイルを開きます。<br>（お持ちでない方は、こちらからダウンロードしてください。<a rel="noreferrer noopener" href="https://www.qbittorrent.org/download.php" target="_blank"> https://www.qbittorrent.org/download.php</a>）<br>.isoファイルを入手したら、7-Zipで開いてください。<br>（7-Zipはこちらからダウンロードできます。 <a rel="noreferrer noopener" href="https://www.7-zip.org/download.html" target="_blank">https://www.7-zip.org/download.html</a>）<br>.isoファイルの内容をすべて、作成した新しいドライブパーティションにコピーします。<br>コンピュータを再起動し、Windowsを起動します。</p>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide"/>
+
+
+
+<p>その後、ログイン画面で、右下の電源ボタンを押し、shiftを押しながら、再起動を選択します。<br>shiftを押したままにしておきます。<br>ブルースクリーンがポップアップ表示されます。Use a Device を選択します。<br>Linux Mint、または UEFI が Linux Mint と呼ぶことに決めたものを選択し ます。<br>（Acer コンピュータの場合、&#8221;Linpus Lite &#8220;と表示されるかもしれません。）<br>用意してあるUSB を接続します。<br>デスクトップが表示されるので、&#8221;Install Linux Mint &#8220;をクリックします。<br>インストーラが &#8220;Installation Type&#8221; を聞いてくるので &#8220;Something Else&#8221; を選択します。<br>Device for Bootloader Installation &#8220;をクリックし、USBドライブの名前を選択します。USBドライブの名前の左側にあるテキストに注目してください。<br>これがパスです。（通常、&#8221;/dev/sda &#8220;と表示されます。）<br>インストーラーのページを、USBの名前の横に表示されていたパスが表示されるまでスクロールしてください。<br>USB上の既存のパーティション（/dev/sda1、/dev/sda2）を選択し、「-」を押して空き領域を作ります。<br>新しい空き領域を選択し、「+」を押して新しいパーティションを作成します。<br>サイズ500MB、パーティションの種類を作成します： Primary, Location for the Partition： この新しいスペースの始まりです。として使用する」というボックスを選択し、「EFIシステムパーティション」を選択します。OKを押す。<br>残りの空き領域を選択し、もう一度＋を押します。サイズはできるだけ大きく、Type of partition： Primary, Location for the partition： この新しいスペースのはじまり。Use as:」というボックスを選択し、「Ext4 journaling system」を選択します。<br>マウントポイント」と書かれたテキストボックスをクリックし、フォワードスラッシュを入力します。(/) OKを押します。</p>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide"/>
+
+
+
+<p>すべての準備が整ったら、USBがブートローダーのインストール用に設定されていることをもう一度確認し、「今すぐインストール」を押します。<br>タイムゾーンを選択します。<br>ユーザーを作成します。Encrypt my Home Directory（ホームディレクトリを暗号化する）」を必ず選択してください！これはセキュリティ上非常に重要なことです！<br>インストールが完了するのを待つ間に、ステップ3を実行します。<br>ステップ3：ファームウェア<br>Chromebookの電源を入れ、CTRL + ALT + Tを押してCroshを開きます。<br>必ず「shell」と入力して、bashに入るようにしてください。<br>cd; curl -LO mrchromebox.tech/firmware-util.sh &amp;&amp; sudo bash firmware-util.sh 必ずChronosとして実行してください。rootで実行すると、間違った場所にインストールされ、物事を台無しにします。<br>読み込みが終わったら、1.を押してください。<br>完了するまで待ち、Chromebookを再起動してください。<br>Linux Mintのインストールが終了するのを待ってから、次に進みます。<br>USBをChromebookに挿入してください。<br>OS Verification画面でCTRL + Lを押し、1を押します。<br>画面下にプロンプトが表示されたらescapeを押し、Boot Menuを選択します。<br>USBを選択し、Enterキーを押します。<br>そしたら完了です。</p>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide"/>
+
+
+
+<p class="has-text-align-center"><strong>参考画像</strong></p>
+
+
+<div class="wp-block-image">
+<figure class="alignright size-full is-resized"><img data-attachment-id="2863" data-permalink="https://blogbooks.net/chromebook/2861/attachment/2/" data-orig-file="/wp-content/uploads/2023/04/2.png" data-orig-size="762,401" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="2" data-image-description="" data-image-caption="" data-medium-file="/wp-content/uploads/2023/04/2-300x158.png" data-large-file="/wp-content/uploads/2023/04/2.png" tabindex="0" role="button" decoding="async" src="/wp-content/uploads/2023/04/2.png" alt="" class="wp-image-2863" width="474" height="249" srcset="/wp-content/uploads/2023/04/2.png 762w, /wp-content/uploads/2023/04/2-300x158.png 300w" sizes="(max-width: 474px) 100vw, 474px" /></figure></div>
+
+
+<figure class="wp-block-image size-full is-resized"><img data-attachment-id="2862" data-permalink="https://blogbooks.net/chromebook/2861/attachment/1/" data-orig-file="/wp-content/uploads/2023/04/1.png" data-orig-size="629,401" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="1" data-image-description="" data-image-caption="" data-medium-file="/wp-content/uploads/2023/04/1-300x191.png" data-large-file="/wp-content/uploads/2023/04/1.png" tabindex="0" role="button" decoding="async" src="/wp-content/uploads/2023/04/1.png" alt="" class="wp-image-2862" width="444" height="283" srcset="/wp-content/uploads/2023/04/1.png 629w, /wp-content/uploads/2023/04/1-300x191.png 300w" sizes="(max-width: 444px) 100vw, 444px" /></figure>
+
+
+<div class="wp-block-image">
+<figure class="alignright size-full is-resized"><img data-attachment-id="2865" data-permalink="https://blogbooks.net/chromebook/2861/attachment/4/" data-orig-file="/wp-content/uploads/2023/04/4.png" data-orig-size="651,401" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="4" data-image-description="" data-image-caption="" data-medium-file="/wp-content/uploads/2023/04/4-300x185.png" data-large-file="/wp-content/uploads/2023/04/4.png" tabindex="0" role="button" decoding="async" src="/wp-content/uploads/2023/04/4.png" alt="" class="wp-image-2865" width="452" height="278" srcset="/wp-content/uploads/2023/04/4.png 651w, /wp-content/uploads/2023/04/4-300x185.png 300w" sizes="(max-width: 452px) 100vw, 452px" /></figure></div>
+
+
+<figure class="wp-block-image size-full is-resized"><img data-attachment-id="2864" data-permalink="https://blogbooks.net/chromebook/2861/attachment/3/" data-orig-file="/wp-content/uploads/2023/04/3.png" data-orig-size="619,401" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="3" data-image-description="" data-image-caption="" data-medium-file="/wp-content/uploads/2023/04/3-300x194.png" data-large-file="/wp-content/uploads/2023/04/3.png" tabindex="0" role="button" decoding="async" src="/wp-content/uploads/2023/04/3.png" alt="" class="wp-image-2864" width="447" height="290" srcset="/wp-content/uploads/2023/04/3.png 619w, /wp-content/uploads/2023/04/3-300x194.png 300w" sizes="(max-width: 447px) 100vw, 447px" /></figure>
+
+
+
+<figure class="wp-block-image size-full"><img width="638" height="401" data-attachment-id="2866" data-permalink="https://blogbooks.net/chromebook/2861/attachment/5/" data-orig-file="/wp-content/uploads/2023/04/5.png" data-orig-size="638,401" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="5" data-image-description="" data-image-caption="" data-medium-file="/wp-content/uploads/2023/04/5-300x189.png" data-large-file="/wp-content/uploads/2023/04/5.png" tabindex="0" role="button" decoding="async" src="/wp-content/uploads/2023/04/5.png" alt="" class="wp-image-2866" srcset="/wp-content/uploads/2023/04/5.png 638w, /wp-content/uploads/2023/04/5-300x189.png 300w" sizes="(max-width: 638px) 100vw, 638px" /></figure>
+
+
+
+<h3 class="wp-block-heading">情報引用元</h3>
+
+
+
+<p><a href="https://discord.gg/unblock">TitaniumNetwork – Discord Server</a>&nbsp;of&nbsp;<a rel="noreferrer noopener" href="https://discord.com/channels/419123358698045453/766448095960629259/1019248767544868936" target="_blank">Message</a></p>
+元記事: <a href="https://blogbooks.net/chromebook/2861/">https://blogbooks.net/chromebook/2861/</a>
