@@ -1,0 +1,103 @@
+{
+  "date": "2023-01-19T13:01:51",
+  "draft": false,
+  "params": {
+    "author": 3
+  },
+  "title": "[Chromebook] フィルタリング解除 / ChromeOS 全バージョン対応",
+  "summary": "harunです。4ヶ月ぶりの投稿なので、誤字・脱字あるかもしれません。ご了承ください",
+  "url": "/chromebook/2357/",
+  "tag": [
+    "chromebook"
+  ],
+  "category": [
+    "chromebook"
+  ]
+}
+
+<p>訂正: 2023/01/19 22:40 &#8211; 内容の訂正</p>
+
+
+
+<p class="is-style-nishiki-blocks-pro-paragraph-warning-01">無断転載おやめください<br>&#8211; 転載する場合は、&#8221;引用元: BlogBooks Library https://blogbooks.net &#8220;と記載してください。</p>
+
+
+
+<p>exploit.js v2.1をオープンソース化しました。(不安定でかつ、めんどくさくなったため =&gt; 使えるには使えるけど、使いづらいってこと)</p>
+
+
+
+<ul class="wp-block-list">
+<li><a href="https://oncreative.space/project/blogbooks/exploit.js/released/v2.1/compressed_exploit.js" type="URL" id="https://oncreative.space/project/blogbooks/exploit.js/released/v2.1/compressed_exploit.js" target="_blank" rel="noreferrer noopener" class="broken_link">Index of /project/blogbooks/exploit.js/released/v2.1</a></li>
+</ul>
+
+
+
+<p>上の通りなので、別の方法を紹介していきます。</p>
+
+
+
+<h2 class="wp-block-heading">ガイドブック</h2>
+
+
+
+<ul class="wp-block-list">
+<li>まず、chrome://extensions を開きます。</li>
+</ul>
+
+
+
+<ul class="wp-block-list">
+<li>どの拡張機能でもいいので、詳細をクリック(下は、Chrome extension source viewerですがどの詳細でもいいです)</li>
+</ul>
+
+
+
+<figure class="wp-block-image size-full"><img width="363" height="150" data-attachment-id="2379" data-permalink="https://blogbooks.net/chromebook/2357/attachment/image-3-9/" data-orig-file="/wp-content/uploads/2023/01/image-3.png" data-orig-size="363,150" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="image-3" data-image-description="" data-image-caption="" data-medium-file="/wp-content/uploads/2023/01/image-3-300x124.png" data-large-file="/wp-content/uploads/2023/01/image-3.png" tabindex="0" role="button" decoding="async" src="/wp-content/uploads/2023/01/image-3.png" alt="" class="wp-image-2379" srcset="/wp-content/uploads/2023/01/image-3.png 363w, /wp-content/uploads/2023/01/image-3-300x124.png 300w" sizes="(max-width: 363px) 100vw, 363px" /></figure>
+
+
+
+<ul class="wp-block-list">
+<li>そして、下にスクロールし「Chrome ウェブストアのページに移動」をクリックし、<br>開いた直後すぐに、escキー(左上)を押す。(無題って表記であればok)</li>
+</ul>
+
+
+
+<figure class="wp-block-video"><video controls src="/wp-content/uploads/2023/01/Screen-recording-2023-01-19-20.54.48.webm"></video></figure>
+
+
+
+<ul class="wp-block-list">
+<li>次、下のブックマークレットを実行します。<br>(下の動画でテストとして使ったIDは、フィルタリングのIDではないので、下の拡張機能IDリストからお探しください)</li>
+</ul>
+
+
+
+<p class="is-style-nishiki-blocks-pro-paragraph-checkmark-01">拡張機能IDリスト:<br><a href="/wp-content/uploads/2022/10/extensionID-2.html" target="_blank" rel="noreferrer noopener">/wp-content/uploads/2022/10/extensionID-2.html</a> </p>
+
+
+
+<pre class="wp-block-code"><code>javascript:let shim = false;var ids = prompt("拡張機能IDを入力(カンマ(,)で区切ることで、複数指定可能) / https://blogbooks.net").split(",");setInterval(()=&gt;{ids.forEach((id)=&gt; opener.chrome.developerPrivate.updateExtensionConfiguration({extensionId: id, fileAccess: shim}));shim = !shim;}, 250);</code></pre>
+
+
+
+<figure class="wp-block-video"><video controls src="/wp-content/uploads/2023/01/Screen-recording-2023-01-19-21.02.30.webm"></video></figure>
+
+
+
+<ul class="wp-block-list">
+<li>以上ですが、注意していただきたいことを言います<br>閉じてしまったら、一からやり直しです。はい。</li>
+</ul>
+
+
+
+<p class="is-style-nishiki-blocks-pro-paragraph-warning-01">chrome://extensionsと無題のタブは、<strong><span style="text-decoration: underline;"><mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-vivid-red-color">絶対に閉じないでください</mark></span></strong>。スクリプトが止まってしまいます！</p>
+
+
+
+<p></p>
+
+
+
+<p class="is-style-nishiki-blocks-pro-paragraph-info-01">Discord: harun#9676<br>Discord Server: <a rel="noreferrer noopener" href="https://discord.gg/HR6GXx9Hef" target="_blank">BlogBooks Community</a></p>
+元記事: <a href="https://blogbooks.net/chromebook/2357/">https://blogbooks.net/chromebook/2357/</a>

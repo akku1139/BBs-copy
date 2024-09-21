@@ -1,0 +1,74 @@
+{
+  "date": "2023-02-02T12:52:00",
+  "draft": false,
+  "params": {
+    "author": 17
+  },
+  "title": "Google CloudでLinuxの仮想PC",
+  "summary": "お久しぶりです。今回はlinuxのVMです。まずhttps://console.cloud.goog&#8230;",
+  "url": "/chromebook/2490/",
+  "tag": [
+    "chromebook",
+    "tool",
+    "ブロック回避",
+    "chrome",
+    "chromebook",
+    "クローム",
+    "クロームブック",
+    "フィルター回避",
+    "仮想",
+    "仮想pc",
+    "回避"
+  ],
+  "category": [
+    "chromebook",
+    "ツール",
+    "ブロック回避"
+  ]
+}
+
+<p>お久しぶりです。今回はlinuxのVMです。<br>まず<a rel="noreferrer noopener" href="https://console.cloud.google.com/" data-type="URL" data-id="https://console.cloud.google.com/" target="_blank">https://console.cloud.google.com/</a>を開き、必要なプロンプトに従ってログインしてください。<br>その後右上のターミナルアイコン[&gt;_]をクリックします。</p>
+
+
+
+<figure class="wp-block-image size-full"><img width="1000" height="562" data-attachment-id="2213" data-permalink="https://blogbooks.net/chromebook/2212/attachment/8tllklgvcq9ylpz1671596623_1671596654/" data-orig-file="/wp-content/uploads/2022/12/8tlLKlGvCQ9YlPZ1671596623_1671596654.jpg" data-orig-size="1000,562" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="8tlLKlGvCQ9YlPZ1671596623_1671596654" data-image-description="" data-image-caption="" data-medium-file="/wp-content/uploads/2022/12/8tlLKlGvCQ9YlPZ1671596623_1671596654-300x169.jpg" data-large-file="/wp-content/uploads/2022/12/8tlLKlGvCQ9YlPZ1671596623_1671596654.jpg" tabindex="0" role="button" decoding="async" src="/wp-content/uploads/2022/12/8tlLKlGvCQ9YlPZ1671596623_1671596654.jpg" alt="" class="wp-image-2213" srcset="/wp-content/uploads/2022/12/8tlLKlGvCQ9YlPZ1671596623_1671596654.jpg 1000w, /wp-content/uploads/2022/12/8tlLKlGvCQ9YlPZ1671596623_1671596654-300x169.jpg 300w, /wp-content/uploads/2022/12/8tlLKlGvCQ9YlPZ1671596623_1671596654-768x432.jpg 768w, /wp-content/uploads/2022/12/8tlLKlGvCQ9YlPZ1671596623_1671596654-640x360.jpg 640w, /wp-content/uploads/2022/12/8tlLKlGvCQ9YlPZ1671596623_1671596654-64x36.jpg 64w" sizes="(max-width: 1000px) 100vw, 1000px" /></figure>
+
+
+
+<p>下の画像のような画面が出たら下記のコードを入力しEnterを押します。</p>
+
+
+
+<pre class="wp-block-code"><code>  docker run -p 6070:80 dorowu/ubuntu-desktop-lxde-vnc or if you dont want root docker run -p 6080:80 -e USER=doro -e PASSWORD=password -v /dev/shm:/dev/shm dorowu/ubuntu-desktop-lxde-vnc</code></pre>
+
+
+<div class="wp-block-image">
+<figure class="alignleft size-large is-resized"><img data-attachment-id="2214" data-permalink="https://blogbooks.net/chromebook/2212/attachment/screenshot-2022-12-21-13-26-08/" data-orig-file="/wp-content/uploads/2022/12/Screenshot-2022-12-21-13.26.08.png" data-orig-size="1366,716" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Screenshot-2022-12-21-13.26.08" data-image-description="" data-image-caption="" data-medium-file="/wp-content/uploads/2022/12/Screenshot-2022-12-21-13.26.08-300x157.png" data-large-file="/wp-content/uploads/2022/12/Screenshot-2022-12-21-13.26.08-1024x537.png" tabindex="0" role="button" decoding="async" src="/wp-content/uploads/2022/12/Screenshot-2022-12-21-13.26.08-1024x537.png" alt="" class="wp-image-2214" width="1017" height="532" srcset="/wp-content/uploads/2022/12/Screenshot-2022-12-21-13.26.08-1024x537.png 1024w, /wp-content/uploads/2022/12/Screenshot-2022-12-21-13.26.08-300x157.png 300w, /wp-content/uploads/2022/12/Screenshot-2022-12-21-13.26.08-768x403.png 768w, /wp-content/uploads/2022/12/Screenshot-2022-12-21-13.26.08.png 1366w" sizes="(max-width: 1017px) 100vw, 1017px" /></figure></div>
+
+
+<p>読み込みが終わったら”ウェブでプレビュー”をクリックし、ポートを変更を押します</p>
+
+
+
+<p>ポートを6070に変更します。</p>
+
+
+
+<figure class="wp-block-image size-large is-resized"><img data-attachment-id="2491" data-permalink="https://blogbooks.net/chromebook/2490/attachment/screenshot-2023-02-02-12-37-10/" data-orig-file="/wp-content/uploads/2023/02/Screenshot-2023-02-02-12.37.10.png" data-orig-size="1366,768" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Screenshot-2023-02-02-12.37.10" data-image-description="" data-image-caption="" data-medium-file="/wp-content/uploads/2023/02/Screenshot-2023-02-02-12.37.10-300x169.png" data-large-file="/wp-content/uploads/2023/02/Screenshot-2023-02-02-12.37.10-1024x576.png" tabindex="0" role="button" decoding="async" src="/wp-content/uploads/2023/02/Screenshot-2023-02-02-12.37.10-1024x576.png" alt="" class="wp-image-2491" width="631" height="354" srcset="/wp-content/uploads/2023/02/Screenshot-2023-02-02-12.37.10-1024x576.png 1024w, /wp-content/uploads/2023/02/Screenshot-2023-02-02-12.37.10-300x169.png 300w, /wp-content/uploads/2023/02/Screenshot-2023-02-02-12.37.10-768x432.png 768w, /wp-content/uploads/2023/02/Screenshot-2023-02-02-12.37.10-640x360.png 640w, /wp-content/uploads/2023/02/Screenshot-2023-02-02-12.37.10-64x36.png 64w, /wp-content/uploads/2023/02/Screenshot-2023-02-02-12.37.10.png 1366w" sizes="(max-width: 631px) 100vw, 631px" /></figure>
+
+
+
+<figure class="wp-block-image size-large is-resized"><img data-attachment-id="2492" data-permalink="https://blogbooks.net/chromebook/2490/attachment/screenshot-2023-02-02-12-37-48/" data-orig-file="/wp-content/uploads/2023/02/Screenshot-2023-02-02-12.37.48.png" data-orig-size="1366,768" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Screenshot-2023-02-02-12.37.48" data-image-description="" data-image-caption="" data-medium-file="/wp-content/uploads/2023/02/Screenshot-2023-02-02-12.37.48-300x169.png" data-large-file="/wp-content/uploads/2023/02/Screenshot-2023-02-02-12.37.48-1024x576.png" tabindex="0" role="button" decoding="async" src="/wp-content/uploads/2023/02/Screenshot-2023-02-02-12.37.48-1024x576.png" alt="" class="wp-image-2492" width="634" height="356" srcset="/wp-content/uploads/2023/02/Screenshot-2023-02-02-12.37.48-1024x576.png 1024w, /wp-content/uploads/2023/02/Screenshot-2023-02-02-12.37.48-300x169.png 300w, /wp-content/uploads/2023/02/Screenshot-2023-02-02-12.37.48-768x432.png 768w, /wp-content/uploads/2023/02/Screenshot-2023-02-02-12.37.48-640x360.png 640w, /wp-content/uploads/2023/02/Screenshot-2023-02-02-12.37.48-64x36.png 64w, /wp-content/uploads/2023/02/Screenshot-2023-02-02-12.37.48.png 1366w" sizes="(max-width: 634px) 100vw, 634px" /></figure>
+
+
+
+<p>その後、ウェブでプレビューをもう一回押すと&#8230;&#8230;&#8230;&#8230;..</p>
+
+
+
+<figure class="wp-block-image size-large"><img width="1024" height="576" data-attachment-id="2494" data-permalink="https://blogbooks.net/chromebook/2490/attachment/screenshot-2023-02-02-12-22-17-1/" data-orig-file="/wp-content/uploads/2023/02/Screenshot-2023-02-02-12.22.17-1.jpg" data-orig-size="1366,768" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Screenshot-2023-02-02-12.22.17-1" data-image-description="" data-image-caption="" data-medium-file="/wp-content/uploads/2023/02/Screenshot-2023-02-02-12.22.17-1-300x169.jpg" data-large-file="/wp-content/uploads/2023/02/Screenshot-2023-02-02-12.22.17-1-1024x576.jpg" tabindex="0" role="button" decoding="async" src="/wp-content/uploads/2023/02/Screenshot-2023-02-02-12.22.17-1-1024x576.jpg" alt="" class="wp-image-2494" srcset="/wp-content/uploads/2023/02/Screenshot-2023-02-02-12.22.17-1-1024x576.jpg 1024w, /wp-content/uploads/2023/02/Screenshot-2023-02-02-12.22.17-1-300x169.jpg 300w, /wp-content/uploads/2023/02/Screenshot-2023-02-02-12.22.17-1-768x432.jpg 768w, /wp-content/uploads/2023/02/Screenshot-2023-02-02-12.22.17-1-640x360.jpg 640w, /wp-content/uploads/2023/02/Screenshot-2023-02-02-12.22.17-1-64x36.jpg 64w, /wp-content/uploads/2023/02/Screenshot-2023-02-02-12.22.17-1.jpg 1366w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>以上です。</p>
+元記事: <a href="https://blogbooks.net/chromebook/2490/">https://blogbooks.net/chromebook/2490/</a>

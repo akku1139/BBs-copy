@@ -1,0 +1,110 @@
+{
+  "date": "2023-02-14T08:00:38",
+  "draft": false,
+  "params": {
+    "author": 17
+  },
+  "title": "拡張機能をダウンロードすることができるブックマークレット",
+  "summary": "お久しぶりです。学業を専念していたためあまり投稿ができてませんでした。 chrome://polic&#8230;",
+  "url": "/chromebook/2601/",
+  "tag": [
+    "chromebook",
+    "tool",
+    "bookmark",
+    "chrome",
+    "chromebook",
+    "クローム",
+    "クロームブック",
+    "拡張機能"
+  ],
+  "category": [
+    "chromebook",
+    "ツール"
+  ]
+}
+
+<p>お久しぶりです。学業を専念していたためあまり投稿ができてませんでした。</p>
+
+
+
+<p class="is-style-nishiki-blocks-pro-paragraph-warning-01">chrome://policiesでポリシーを確認し、許可リストとブロックリストがあれば、この方法は不可能です。</p>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-nishiki-blocks-pro-separator-double"/>
+
+
+
+<p class="has-text-align-center">やり方</p>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-nishiki-blocks-pro-separator-double"/>
+
+
+
+<p>下記のコード（長いですがご了承ください）をコピーし、bookmarkに保存してください。</p>
+
+
+
+<pre class="wp-block-code"><code>javascript: document.write(
+  "&lt;center&gt;&lt;head&gt;&lt;h1&gt;Extension Launcher &lt;/h1&gt;&lt;/head&gt;&lt;/center&gt;&lt;center&gt;&lt;h3&gt;Instructions: Put in the id of the extension, the icon of the extension, and the name of the extension&lt;/h3&gt;&lt;/center&gt;&lt;center&gt;&lt;br&gt;&lt;input  id='icon' placeholder='Put Extension Icon here'&gt;&lt;/br&gt;&lt;/center&gt;&lt;center&gt;&lt;br&gt;&lt;input id='name' placeholder='Put name here'&gt;&lt;/br&gt;&lt;/center&gt;&lt;center&gt;&lt;br&gt;&lt;input id='extension' maxlength='32' placeholder='Put extension id here'&gt;&lt;/br&gt;&lt;/center&gt;&lt;center&gt;&lt;br&gt;&lt;button id='submit'&gt;Download&lt;/button&gt;&lt;/br&gt;&lt;/center&gt;\n&lt;style&gt; textarea{border-radius: 25px; margin: 1 auto;margin-center: auto;margin-center: auto; text-align: center; align: center; display:inline-block;height:400px}*{box-sizing:border-box}body{padding:13px;font-size:110%;color:#fff;background-color:#2e2e31}h1{text-align:center;font-size:70px}h2{text-align:left;font-size:175%}button,input,pre,select,textarea{border-radius: 21px; color:#000;font-size:15px}h1,h2,h3,h4,button,label,p,select{font-family:Roboto,sans-serif}hr{border:none;border-bottom:3px solid #fff}input,kbd,pre,textarea{font-family:monospace;border:none}input,select,textarea{background-color:#fff;border-radius:25px; padding:13px 17px;border:none}button,input{background-color:#fff;padding:13px 100px;margin:20 5px 5px 0}input{width:600px;border-radius:25px}textarea{white-space:pre;float:center;width:60%;border-radius:25px; 0 0 10px;resize:none;background-color:#99edc3;margin-bottom:15px}pre{border-radius:25; 10px 10px 0;padding:13px;float:right;margin:0 0 25px;width:40%;overflow-y:scroll;word-break:break-all;white-space:pre-line;background-color:#1c8e40}button{border:none;border-radius:25px; cursor:pointer;transition:filter 250ms}button:hover{filter:brightness(.8)}.gg{background-color:#99edc3}a{color:#99edc3;transition:color 250ms}a:hover{color:#1c8e40}&lt;/style&gt; "
+),
+  document.getElementById("submit").addEventListener(
+    "click",
+    function () {
+      var empty = document.getElementById("extension").value;
+      if (empty == "") {
+        alert("Must put a id");
+      }
+
+      let icon = document.getElementById("icon").value;
+      let name = document.getElementById("name").value;
+      let extension = document.getElementById("extension").value;
+      chrome.webstorePrivate.beginInstallWithManifest3(
+        {
+          esbAllowlist: !0,
+          iconUrl: "" + icon,
+          id: "" + extension,
+          localizedName: "" + name,
+          manifest:
+            '{\n"update_url": "https://clients2.google.com/service/update2/crx",\n\n    "manifest_version": 2,\n    "content_security_policy": "script-src \'self\'; object-src \'self\';",\n    "minimum_chrome_version": "71.0.0.0",\n    "offline_enabled": true,\n    "content_scripts":\n    &#91;\n        {\n            "js": &#91;\n                "page.js",\n                "content.js"\n            ],\n            "matches": &#91; "file:///*", "http://*/*", "https://*/*" ],\n            "run_at": "document_start",\n            "all_frames": true\n        }\n    ],\n    "browser_action": {\n        "default_icon": {\n            "19": "images/icon_grey19.png",\n            "38": "images/icon_grey38.png",\n            "16": "images/icon_grey16.png",\n            "24": "images/icon_grey24.png",\n            "32": "images/icon_grey32.png"\n        },\n        "default_title": "Tampermonkey",\n        "default_popup": "action.html"\n    },\n    "icons": {\n        "32": "images/icon.png",\n        "48": "images/icon48.png",\n        "128": "images/icon128.png"\n    },\n    "incognito": "split",\n    "name": "Tampermonkey",\n    "short_name": "Tampermonkey",\n    "version": "4.18.0",\n    "description": "The world\'s most popular userscript manager",\n    "default_locale": "en",\n    "background": {\n       "page": "background.html"\n    },\n    "options_page": "options.html",\n    "options_ui": {\n        "page": "options.html",\n        "chrome_style": false,\n        "open_in_tab": true\n    },\n    "commands": {\n        "toggle-enable": {\n            "description": "Toggle enable state"\n        },\n        "open-dashboard": {\n            "description": "Open dashboard"\n        },\n        "open-dashboard-with-running-scripts": {\n            "description": "Open dashboard with the current tab\'s URL used as filter"\n        },\n        "open-new-script": {\n            "description": "Open new script tab"\n        }\n    },\n    "permissions": &#91;\n        "notifications",\n        "unlimitedStorage",\n        "tabs",\n        "idle",\n        "webNavigation",\n        "webRequest", "webRequestBlocking",\n        "storage",\n        "contextMenus",\n        "chrome://favicon/",\n        "clipboardWrite",\n        "cookies",\n        "declarativeContent",\n        "&lt;all_urls&gt;"\n    ],\n    "optional_permissions" : &#91; "downloads" ]\n}\n',
+        },
+        function () {
+          chrome.webstorePrivate.completeInstall("" + extension, function () {
+            console.log(arguments);
+          });
+        }
+      );
+    },
+    !1
+  );</code></pre>
+
+
+
+<figure class="wp-block-image size-full"><img width="547" height="619" data-attachment-id="2602" data-permalink="https://blogbooks.net/chromebook/2601/attachment/screenshot-2023-02-14-01-12-57/" data-orig-file="/wp-content/uploads/2023/02/Screenshot-2023-02-14-01.12.57.png" data-orig-size="547,619" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Screenshot-2023-02-14-01.12.57" data-image-description="" data-image-caption="" data-medium-file="/wp-content/uploads/2023/02/Screenshot-2023-02-14-01.12.57-265x300.png" data-large-file="/wp-content/uploads/2023/02/Screenshot-2023-02-14-01.12.57.png" tabindex="0" role="button" decoding="async" src="/wp-content/uploads/2023/02/Screenshot-2023-02-14-01.12.57.png" alt="" class="wp-image-2602" srcset="/wp-content/uploads/2023/02/Screenshot-2023-02-14-01.12.57.png 547w, /wp-content/uploads/2023/02/Screenshot-2023-02-14-01.12.57-265x300.png 265w" sizes="(max-width: 547px) 100vw, 547px" /></figure>
+
+
+
+<p>その後それを <a rel="noreferrer noopener" href="http://chrome.google.com/webstorex" data-type="URL" data-id="http://chrome.google.com/webstorex" target="_blank">https://chrome.google.com/webstorex</a> にアクセスしてブックマークレットを実行し、拡張機能のアイコン、ID、名前（何でもいいです）を入れてください。<br>（アイコンは下のように左の画像を右クリックし、”画像アドレスをコピー”を選択してください）</p>
+
+
+
+<figure class="wp-block-image size-large"><img width="1024" height="143" data-attachment-id="2605" data-permalink="https://blogbooks.net/chromebook/2601/attachment/screenshot-2023-02-14-11-20-05/" data-orig-file="/wp-content/uploads/2023/02/Screenshot-2023-02-14-11.20.05.png" data-orig-size="1055,147" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Screenshot-2023-02-14-11.20.05" data-image-description="" data-image-caption="" data-medium-file="/wp-content/uploads/2023/02/Screenshot-2023-02-14-11.20.05-300x42.png" data-large-file="/wp-content/uploads/2023/02/Screenshot-2023-02-14-11.20.05-1024x143.png" tabindex="0" role="button" decoding="async" src="/wp-content/uploads/2023/02/Screenshot-2023-02-14-11.20.05-1024x143.png" alt="" class="wp-image-2605" srcset="/wp-content/uploads/2023/02/Screenshot-2023-02-14-11.20.05-1024x143.png 1024w, /wp-content/uploads/2023/02/Screenshot-2023-02-14-11.20.05-300x42.png 300w, /wp-content/uploads/2023/02/Screenshot-2023-02-14-11.20.05-768x107.png 768w, /wp-content/uploads/2023/02/Screenshot-2023-02-14-11.20.05.png 1055w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img width="1024" height="576" data-attachment-id="2609" data-permalink="https://blogbooks.net/chromebook/2601/attachment/screenshot-2023-02-14-11-30-43/" data-orig-file="/wp-content/uploads/2023/02/Screenshot-2023-02-14-11.30.43.png" data-orig-size="1366,768" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Screenshot-2023-02-14-11.30.43" data-image-description="" data-image-caption="" data-medium-file="/wp-content/uploads/2023/02/Screenshot-2023-02-14-11.30.43-300x169.png" data-large-file="/wp-content/uploads/2023/02/Screenshot-2023-02-14-11.30.43-1024x576.png" tabindex="0" role="button" decoding="async" src="/wp-content/uploads/2023/02/Screenshot-2023-02-14-11.30.43-1024x576.png" alt="" class="wp-image-2609" srcset="/wp-content/uploads/2023/02/Screenshot-2023-02-14-11.30.43-1024x576.png 1024w, /wp-content/uploads/2023/02/Screenshot-2023-02-14-11.30.43-300x169.png 300w, /wp-content/uploads/2023/02/Screenshot-2023-02-14-11.30.43-768x432.png 768w, /wp-content/uploads/2023/02/Screenshot-2023-02-14-11.30.43-640x360.png 640w, /wp-content/uploads/2023/02/Screenshot-2023-02-14-11.30.43-64x36.png 64w, /wp-content/uploads/2023/02/Screenshot-2023-02-14-11.30.43.png 1366w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img width="1024" height="576" data-attachment-id="2612" data-permalink="https://blogbooks.net/chromebook/2601/attachment/screenshot-2023-02-14-11-35-54/" data-orig-file="/wp-content/uploads/2023/02/Screenshot-2023-02-14-11.35.54.png" data-orig-size="1366,768" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Screenshot-2023-02-14-11.35.54" data-image-description="" data-image-caption="" data-medium-file="/wp-content/uploads/2023/02/Screenshot-2023-02-14-11.35.54-300x169.png" data-large-file="/wp-content/uploads/2023/02/Screenshot-2023-02-14-11.35.54-1024x576.png" tabindex="0" role="button" decoding="async" src="/wp-content/uploads/2023/02/Screenshot-2023-02-14-11.35.54-1024x576.png" alt="" class="wp-image-2612" srcset="/wp-content/uploads/2023/02/Screenshot-2023-02-14-11.35.54-1024x576.png 1024w, /wp-content/uploads/2023/02/Screenshot-2023-02-14-11.35.54-300x169.png 300w, /wp-content/uploads/2023/02/Screenshot-2023-02-14-11.35.54-768x432.png 768w, /wp-content/uploads/2023/02/Screenshot-2023-02-14-11.35.54-640x360.png 640w, /wp-content/uploads/2023/02/Screenshot-2023-02-14-11.35.54-64x36.png 64w, /wp-content/uploads/2023/02/Screenshot-2023-02-14-11.35.54.png 1366w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>上のような画像になればあとは必要事項を入力してください<br><br>短いですが以上です。</p>
+
+
+
+<p></p>
+元記事: <a href="https://blogbooks.net/chromebook/2601/">https://blogbooks.net/chromebook/2601/</a>
