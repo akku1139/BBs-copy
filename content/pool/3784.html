@@ -1,0 +1,118 @@
+{
+  "date": "2023-12-10T17:00:49",
+  "draft": false,
+  "params": {
+    "author": 32
+  },
+  "title": "スマホしかない人や、学校のパソコンしかない人向けのダウングレード方法",
+  "summary": "ダウングレードするにもパソコンがない！\nスマホならある！\nという人や、スマホすらなくて、学校のパソコンしかない&#8230;\nという方向けの記事です。",
+  "url": "/chromebook/3784/",
+  "tags": "chromebook,ブロック回避,chrome,chromebook,chromeos,クローム,クロームブック,ダウングレード,バージョン,ブロック,下げる,回避,戻す,unlock",
+  "categories": [
+    "chromebook",
+    "ブロック回避"
+  ]
+}
+
+<h2 class="wp-block-heading">お久しぶりです（n回目）</h2>
+
+
+
+<p>お久しぶりです。<br>これが投稿される時期がいつになるかはわかりませんが、今は死ぬほど寒いです。</p>
+
+
+
+<h2 class="wp-block-heading">本題</h2>
+
+
+
+<p>ダウングレードするにもパソコンがない！<br>スマホならある！<br>という人や、スマホすらなくて、学校のパソコンしかない&#8230;<br>という方向けの記事です。</p>
+
+
+
+<h2 class="wp-block-heading">1. &#x1f4f1;スマホの方用</h2>
+
+
+
+<p>スマホのchromeって、拡張機能が入れられないように設定されているんですよね。<mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-white-color">なんでそんなめんどくさいことしたん</mark></p>
+
+
+
+<p>しかし、拡張機能が入れられるブラウザーがあるのです！</p>
+
+
+
+<ul class="wp-block-list">
+<li>「<a href="https://play.google.com/store/apps/details?id=com.kiwibrowser.browser&amp;hl=ja&amp;gl=US" data-type="link" data-id="https://play.google.com/store/apps/details?id=com.kiwibrowser.browser&amp;hl=ja&amp;gl=US" target="_blank" rel="noreferrer noopener nofollow">kiwi browser(Android)</a>」にアクセスして、kiwibrowserをダウンロードします。</li>
+
+
+
+<li>終わったら、kiwibrowserで<a href="https://chrome.google.com/webstore/detail/chromebook-recovery-utili/pocpnlppkickgojjlmhdmidojbmbodfm?hl=ja" target="_blank" rel="noreferrer noopener nofollow">Chromebook リカバリ ユーティリティ &#8211; Chrome ウェブストア</a> にアクセスして、microSDをスマホに差し込み（外部ストレージとして認識させてください）</li>
+
+
+
+<li>拡張機能を入れ、やってみてください。（未検証なのでできた方コメントお願いします。できなかったときもお願いします。）</li>
+
+
+
+<li><a href="https://blogbooks.net/chromebook/3518/">https://blogbooks.net/chromebook/3518/</a> ここにリカバリーユーテリティの使い方やダウングレード用のSDカードの作り方が乗っています。</li>
+</ul>
+
+
+
+<p>参考にした記事&#8230;<a href="https://blog.fascode.net/2022/02/16/android/">https://blog.fascode.net/2022/02/16/android/</a></p>
+
+
+
+<h2 class="wp-block-heading">2. &#x1f4bb;学校のパソコンしか持ってない人用</h2>
+
+
+
+<p class="has-text-align-left is-style-nishiki-blocks-pro-paragraph-warning-01">chromeOS 115以上の人はこちらは使えません。</p>
+
+
+
+<p class="has-text-align-left">言っちゃえばこっちのほうが簡単です。パソコンの方が落ちにくいですし</p>
+
+
+
+<p>学校のパソコンしか持っていない人向けには、拡張機能を入れるブックマークレットを使います。</p>
+
+
+
+<ul class="wp-block-list">
+<li>まず、<a href="https://chrome.google.com/webstorex" data-type="link" data-id="https://chrome.google.com/webstorex">https://chrome.google.com/webstorex</a> にアクセスして、アクセスしたら、そのタブのアドレスバーに、<br>下のブックマークレットをコピーし、javascript:と打ったあと、さっきのブックマークレットを貼り付けてEnter</li>
+</ul>
+
+
+
+<pre class="wp-block-code"><code>javascript: document.write("&lt;center&gt;&lt;head&gt;&lt;h1 style='color: white; margin-top: 100px; font-size: 50px; line-height: 1;'&gt;Extension Installer ver.1.2.0&lt;/h1&gt;&lt;h3 style='color: white; margin-top: -10px; font-size: 20px; line-height: 1;'&gt;Created by NGMS#3914&lt;/h3&gt;&lt;h3 style='color: white; margin-top: -10px; font-size: 20px; line-height: 1;'&gt;Improved by Subneko#6560&lt;/h3&gt;&lt;h3 style='color: white; margin-top: -10px; font-size: 20px; line-height: 1;'&gt;©2023 MJUC&lt;/h3&gt;&lt;/head&gt;&lt;/center&gt;&lt;style&gt;body {background-color: #2e2e31;}&lt;/style&gt;&lt;div style='display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh;'&gt;&lt;div style='display: flex; flex-direction: column; justify-content: center; align-items: center;'&gt;&lt;input id='extension' placeholder='Extension ID or URL(include Extension ID)' style='width: 250%; height: 50px; font-size: 20px; border-radius: 25px 25px 25px 25px; color: black; padding-left: 20px; margin-bottom: 100px; margin-top: -150px;'&gt;&lt;button id='DL' style='border-radius: 10px; width: 300px; height: 50px; font-size: 18px; color: black; margin-bottom: 200px; border-radius: 30px;'&gt;Download&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;");String.prototype.getExtensionID = function () {    if (/^&#91;a-zA-Z]{32}$/.test(this)) {        return this.toString();    } else if (this.match("chrome.google.com")) {        const pathname = new URL(this).pathname.split("/");        const extensionID = pathname&#91;pathname.length - 1];        return /^&#91;a-zA-Z]{32}$/.test(extensionID) ? extensionID : false;    }    return false;};document.getElementById("DL").addEventListener("click", () =&gt; {    let extensionID = document.getElementById("extension").value.getExtensionID();    if (extensionID) {        chrome.webstorePrivate.beginInstallWithManifest3(            {                id: extensionID,                manifest: '{\n"update_url": "https://clients2.google.com/service/update2/crx",\n\n"manifest_version": 2,\n"content_security_policy": "script-src \'self\'; object-src \'self\';",\n"minimum_chrome_version": "71.0.0.0",\n"offline_enabled": true,\n"content_scripts":\n&#91;\n{\n"js": &#91;\n"page.js",\n"content.js"\n],\n"matches": &#91; "file:///*", "http://*/*", "https://*/*" ],\n"run_at": "document_start",\n"all_frames": true\n}\n],\n"browser_action": {\n"default_icon": {\n"19": "images/icon_grey19.png",\n"38": "images/icon_grey38.png",\n"16": "images/icon_grey16.png",\n"24": "images/icon_grey24.png",\n"32": "images/icon_grey32.png"\n},\n"default_title": "Extension",\n"default_popup": "action.html"\n},\n"icons": {\n"32": "images/icon.png",\n"48": "images/icon48.png",\n"128": "images/icon128.png"\n},\n"incognito": "split",\n"name": "Extension",\n"short_name": "Extension",\n"version": "4.18.0",\n"description": "The world\'s most popular userscript manager",\n"default_locale": "en",\n"background": {\n "page": "background.html"\n},\n"options_page": "options.html",\n"options_ui": {\n"page": "options.html",\n"chrome_style": false,\n"open_in_tab": true\n},\n"commands": {\n"toggle-enable": {\n"description": "Toggle enable state"\n},\n"open-dashboard": {\n"description": "Open dashboard"\n},\n"open-dashboard-with-running-scripts": {\n"description": "Open dashboard with the current tab\'s URL used as filter"\n},\n"open-new-script": {\n"description": "Open new script tab"\n}\n},\n"permissions": &#91;\n"notifications",\n"unlimitedStorage",\n"tabs",\n"idle",\n"webNavigation",\n"webRequest", "webRequestBlocking",\n"storage",\n"contextMenus",\n"chrome://favicon/",\n"clipboardWrite",\n"cookies",\n"declarativeContent",\n"&lt;all_urls&gt;"\n],\n"optional_permissions" : &#91; "downloads" ]\n}\n',            },            () =&gt; chrome.webstorePrivate.completeInstall(extensionID, function () {})        );    } else {        alert("Extension ID is Invalid!");    }});</code></pre>
+
+
+
+<ul class="wp-block-list">
+<li>そうすると、</li>
+</ul>
+
+
+
+<figure class="wp-block-image size-large is-resized"><img width="1024" height="466" data-attachment-id="3787" data-permalink="https://blogbooks.net/chromebook/3784/attachment/screenshot-2023-11-04-08-42-46/" data-orig-file="/wp-content/uploads/2023/11/Screenshot-2023-11-04-08.42.46.png" data-orig-size="1181,537" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Screenshot-2023-11-04-08.42.46" data-image-description="" data-image-caption="" data-medium-file="/wp-content/uploads/2023/11/Screenshot-2023-11-04-08.42.46-300x136.png" data-large-file="/wp-content/uploads/2023/11/Screenshot-2023-11-04-08.42.46-1024x466.png" tabindex="0" role="button" decoding="async" src="/wp-content/uploads/2023/11/Screenshot-2023-11-04-08.42.46-1024x466.png" alt="" class="wp-image-3787" style="aspect-ratio:2.1974248927038627;width:988px;height:auto" srcset="/wp-content/uploads/2023/11/Screenshot-2023-11-04-08.42.46-1024x466.png 1024w, /wp-content/uploads/2023/11/Screenshot-2023-11-04-08.42.46-300x136.png 300w, /wp-content/uploads/2023/11/Screenshot-2023-11-04-08.42.46-768x349.png 768w, /wp-content/uploads/2023/11/Screenshot-2023-11-04-08.42.46.png 1181w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<ul class="wp-block-list">
+<li>このような画面になるので、「Extension ID or URL(include Extension ID)」のところに <code>pocpnlppkickgojjlmhdmidojbmbodfm</code> と打って、「Download」をクリック</li>
+
+
+
+<li>拡張機能が入るので、そこから先のダウングレードの仕方は、<a href="https://blogbooks.net/chromebook/3518/">https://blogbooks.net/chromebook/3518/</a>を見てください（丸投げ）</li>
+</ul>
+
+
+
+<h2 class="wp-block-heading">終了</h2>
+
+
+
+<p>もしできなかったらコメントへ送ってください。<br>できたときも確認用として送ってください。<br>お願いします。</p>
+元記事: <a href="https://blogbooks.net/chromebook/3784/">https://blogbooks.net/chromebook/3784/</a>

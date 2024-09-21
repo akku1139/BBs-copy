@@ -1,0 +1,116 @@
+{
+  "date": "2023-02-06T17:00:10",
+  "draft": false,
+  "params": {
+    "author": 3
+  },
+  "title": "[Chromebook] 完全(ポリシーも)ブロック解除",
+  "summary": "あなたの使っているChromebookが、市や区の所有物である場合、この方法はおすすめできません",
+  "url": "/chromebook/2559/",
+  "tags": "chromebook,chrome,chromebook,クローム,クロームブック,ブロック,回避,unlock",
+  "categories": [
+    "chromebook"
+  ]
+}
+
+<pre class="wp-block-code"><code>- あなたの使っているChromebookが、市や区の所有物である場合、この方法はおすすめできません
+- 学校のWiFiのパスワードは、事前に調べておいてください</code></pre>
+
+
+
+<h2 class="wp-block-heading">ガイドブック</h2>
+
+
+
+<p>必要なもの</p>
+
+
+
+<ul class="wp-block-list">
+<li>USB 8GB</li>
+
+
+
+<li>拡張機能の入れられるChromebookか、WindowsやMacなど<br>(WindowsやMacの場合、管理者権限が必ず必要です)</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading">改造ChromeOSの入った、リカバリーUSBの作成</h3>
+
+
+
+<ol class="wp-block-list">
+<li>自分が使用しているChromebookのボード名を探して、そのボード名にあった .binファイルを下からダウンロードしてください<br>https://files.ultimatesrv.com/</li>
+
+
+
+<li>ダウンロードし終わったら、したのサイトにて、「start」をおして、さっきダウンロードした、binファイルをビルドをしてください(15分くらい)<br>https://sh1mmer.me/builder.html</li>
+
+
+
+<li>ビルドし終わったら、改造されたChromeOSのbinファイルのダウンロードが始まります</li>
+
+
+
+<li>Chromebook リカバリ ユーティリティ をChrome Web Storeからダウンロードします。<br>https://chrome.google.com/webstore/detail/chromebook-recovery-utili/pocpnlppkickgojjlmhdmidojbmbodfm</li>
+
+
+
+<li>Chromebook リカバリ ユーティリティを開き、</li>
+
+
+
+<li>右上の:gear:マーク</li>
+
+
+
+<li>ローカルイメージを使用</li>
+
+
+
+<li>先程ダウンロードされた、ビルドされたbinファイルを選択</li>
+
+
+
+<li>USBを指して、指したUSBを選択</li>
+
+
+
+<li>そして、10分くらい待つと、リカバリーUSBができるのでUSBを抜く。</li>
+</ol>
+
+
+
+<h3 class="wp-block-heading">セットアップ</h3>
+
+
+
+<ol class="wp-block-list">
+<li>ChromeOS リカバリー画面に移動します(起動時に、「電源ボタン」、「リロード キー (↻)」、「 esc キー」を同時に押す)</li>
+
+
+
+<li>Ctrl + D を押す</li>
+
+
+
+<li>Enterを押す</li>
+
+
+
+<li><strong>[重要]</strong> そして、<strong>&#8220;OS verification is off&#8221;や&#8221;returning to secure mode&#8221;という画面のまま</strong>、再度「電源ボタン」、「リロードキー(↻)」、「escキー」を同時に押します</li>
+
+
+
+<li>さっき作ったリカバリーUSBを刺す。</li>
+
+
+
+<li>「電源ボタン」、「リロード キー (↻)」、「 esc キー」をもう一度押す。</li>
+
+
+
+<li>そうすると、GUIがでてくるので好きなようにどうぞ<br>(Open Bashなどで、フィルタリング(Extensionファイル)を削除するのもよし)<br>(Un-enroll = Policy解除<br>Re-enroll = 学校設定を元にもどす)</li>
+</ol>
+元記事: <a href="https://blogbooks.net/chromebook/2559/">https://blogbooks.net/chromebook/2559/</a>

