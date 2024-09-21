@@ -36,8 +36,8 @@ posts.forEach((post) => {
     title: post.title.rendered,
     summary: post.excerpt.rendered,
     url: new URL(post.link).pathname,
-    tags: post.nishiki_blocks_pro.terms.map((t) => t.slug),
-    categories: post.nishiki_blocks_pro.terms.map((t) => t.name),
+    tags: decodeURIComponent(post.nishiki_blocks_pro.terms.map((t) => t.slug)),
+    categories: post.nishiki_blocks_pro.category.map((t) => t.name),
   }) + "\n" + post.content.rendered.replaceAll("https://blogbooks.net/wp-content/", "/wp-content/")
     + `\r元記事: <a href="${post.link}">${post.link}</a>`);
 
