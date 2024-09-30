@@ -1,0 +1,258 @@
+{
+  "date": "2024-09-30T22:47:36",
+  "draft": false,
+  "params": {
+    "author": 47
+  },
+  "title": "ChromebookのPolicyを解除する方法 Cryptosmite ver119まで",
+  "summary": "こんにちは、新しく運営に加わったPswitchことPsanです。\n今回はPolicyの完全解除方法を紹介します。",
+  "url": "/chromebook/4445/",
+  "tag": [
+    "chromebook",
+    "ブロック回避",
+    "blockunlock",
+    "chrome",
+    "chromebook",
+    "cryptosmite",
+    "クローム",
+    "クロームブック",
+    "ブロック",
+    "回避",
+    "unlock"
+  ],
+  "category": [
+    "chromebook",
+    "ブロック回避",
+    "ブロック解除"
+  ]
+}
+
+<p class="is-style-nishiki-blocks-pro-paragraph-warning-01">この方法は市から貸し出されているChromebookでは実行しないでください。<br>OSの破損、または保証対象外になるおそれがあります。</p>
+
+
+
+<p>こんにちは、新しく運営に加わったPswitchことPsanです。<br>今回はPolicyの完全解除方法を紹介します。</p>
+
+
+
+<h2 class="wp-block-heading">E-halcyon shimboot との違い</h2>
+
+
+
+<p>E-halcyonやShimbootは、起動時に毎回USBまたはSDカードが必要になってしまいます。<br>その点Cryptosmiteは、毎回の起動時にUSB,SDカードが必要ありません。<br>ただし、バージョン119以下で動作します。</p>
+
+
+
+<h2 class="wp-block-heading">必要なもの</h2>
+
+
+
+<ul class="wp-block-list is-style-default">
+<li>USB SDカード</li>
+
+
+
+<li>バージョン119以下のChromebook</li>
+
+
+
+<li>他のPC、その他USBにイメージファイルをFlashできる機器</li>
+</ul>
+
+
+
+<p class="is-style-nishiki-blocks-pro-paragraph-warning-01">Chromebookを初期化するので、アカウントに再登録する権限がない場合は、この方法を行ったあとに再度登録をすることができません。</p>
+
+
+
+<h2 class="wp-block-heading">USBの準備</h2>
+
+
+
+<p><strong>1.自分のボード名の確認</strong></p>
+
+
+
+<p>a. chrome://version にアクセスします。</p>
+
+
+
+<p>b. ctrl + f を押して出てきたプロンプトに「stable-channel」と入力します。</p>
+
+
+
+<p>c. ヒットした文字のあとの文字がボード名です。</p>
+
+
+
+<figure class="wp-block-image size-large"><img width="1024" height="178" data-attachment-id="4448" data-permalink="https://blogbooks.net/chromebook/4445/attachment/screenshot-2024-08-03-12-35-02-2/" data-orig-file="/wp-content/uploads/2024/08/Screenshot-2024-08-03-12.35.02.png" data-orig-size="1091,190" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Screenshot 2024-08-03 12.35.02" data-image-description="" data-image-caption="" data-medium-file="/wp-content/uploads/2024/08/Screenshot-2024-08-03-12.35.02-300x52.png" data-large-file="/wp-content/uploads/2024/08/Screenshot-2024-08-03-12.35.02-1024x178.png" tabindex="0" role="button" decoding="async" src="/wp-content/uploads/2024/08/Screenshot-2024-08-03-12.35.02-1024x178.png" alt="" class="wp-image-4448" srcset="/wp-content/uploads/2024/08/Screenshot-2024-08-03-12.35.02-1024x178.png 1024w, /wp-content/uploads/2024/08/Screenshot-2024-08-03-12.35.02-300x52.png 300w, /wp-content/uploads/2024/08/Screenshot-2024-08-03-12.35.02-768x134.png 768w, /wp-content/uploads/2024/08/Screenshot-2024-08-03-12.35.02.png 1091w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p><strong>2.ファイルのダウンロード</strong></p>
+
+
+
+<p>以下のURLから、自分のボード名のファイルをダウンロードしてください。</p>
+
+
+
+<p><a href="https://dl.darkn.bio/api/raw/?path=/SH1mmer/Prebuilt/Legacy/legacy_ambassador.zip">ambassador</a><br><a href="https://dl.darkn.bio/api/raw/?path=/SH1mmer/Prebuilt/Legacy/legacy_brask.zip">brask</a><br><a href="https://dl.darkn.bio/api/raw/?path=/SH1mmer/Prebuilt/Legacy/legacy_brya.zip">brya</a><br><a href="https://dl.darkn.bio/api/raw/?path=/SH1mmer/Prebuilt/Legacy/legacy_clapper.zip">clapper</a><br><a href="https://dl.darkn.bio/api/raw/?path=/SH1mmer/Prebuilt/Legacy/legacy_coral.zip">coral</a><br><a href="https://dl.darkn.bio/api/raw/?path=/SH1mmer/Prebuilt/Legacy/legacy_corsola.zip">corsola</a><br><a href="https://dl.darkn.bio/api/raw/?path=/SH1mmer/Prebuilt/Legacy/legacy_dedede.zip">dedede</a><br><a href="https://dl.darkn.bio/api/raw/?path=/SH1mmer/Prebuilt/Legacy/legacy_enguarde.zip">enguarde</a><br><a href="https://dl.darkn.bio/api/raw/?path=/SH1mmer/Prebuilt/Legacy/legacy_glimmer.zip">glimmer</a><br><a href="https://dl.darkn.bio/api/raw/?path=/SH1mmer/Prebuilt/Legacy/legacy_grunt.zip">grunt</a><br><a href="https://dl.darkn.bio/api/raw/?path=/SH1mmer/Prebuilt/Legacy/legacy_hana.zip">hana</a><br><a href="https://dl.darkn.bio/api/raw/?path=/SH1mmer/Prebuilt/Legacy/legacy_hatch.zip">hatch</a><br><a href="https://dl.darkn.bio/api/raw/?path=/SH1mmer/Prebuilt/Legacy/legacy_jacuzzi.zip">jacuzzi</a><br><a href="https://dl.darkn.bio/api/raw/?path=/SH1mmer/Prebuilt/Legacy/legacy_kefka.zip">kefka</a><br><a href="https://dl.darkn.bio/api/raw/?path=/SH1mmer/Prebuilt/Legacy/legacy_kukui.zip">kukui</a> (起動しませんでした。Shimが破損しています。)<br><a href="https://dl.darkn.bio/api/raw/?path=/SH1mmer/Prebuilt/Legacy/legacy_lulu.zip">lulu</a><br><a href="https://dl.darkn.bio/api/raw/?path=/SH1mmer/Prebuilt/Legacy/legacy_nami.zip">nami</a><br><a href="https://dl.darkn.bio/api/raw/?path=/SH1mmer/Prebuilt/Legacy/legacy_nissa.zip">nissa</a><br><a href="https://dl.darkn.bio/api/raw/?path=/SH1mmer/Prebuilt/Legacy/legacy_octopus.zip">octopus</a><br><a href="https://dl.darkn.bio/api/raw/?path=/SH1mmer/Prebuilt/Legacy/legacy_orco.zip">orco</a><br><a href="https://dl.darkn.bio/api/raw/?path=/SH1mmer/Prebuilt/Legacy/legacy_pyro.zip">pyro</a><br><a href="https://dl.darkn.bio/api/raw/?path=/SH1mmer/Prebuilt/Legacy/legacy_reks.zip">reks</a><br><a href="https://dl.darkn.bio/api/raw/?path=/SH1mmer/Prebuilt/Legacy/legacy_sentry.zip">sentry</a><br><a href="https://dl.darkn.bio/api/raw/?path=/SH1mmer/Prebuilt/Legacy/legacy_stout.zip">stout</a><br><a href="https://dl.darkn.bio/api/raw/?path=/SH1mmer/Prebuilt/Legacy/legacy_strongbad.zip">strongbad</a><br><a href="https://dl.darkn.bio/api/raw/?path=/SH1mmer/Prebuilt/Legacy/legacy_tidus.zip">tidus</a><br><a href="https://dl.darkn.bio/api/raw/?path=/SH1mmer/Prebuilt/Legacy/legacy_ultima.zip">ultima</a><br><a href="https://dl.darkn.bio/api/raw/?path=/SH1mmer/Prebuilt/Legacy/legacy_zork.zip">zork</a><br></p>
+
+
+
+<p><strong>3.USBにFlash</strong></p>
+
+
+
+<p><strong>A. Chromeが入っているPCの場合</strong></p>
+
+
+
+<p>a. Chromeに、<a href="https://chrome.google.com/webstore/detail/chromebook-recovery-utili/pocpnlppkickgojjlmhdmidojbmbodfm?hl=ja">Chrome Recovery Utility</a>　を追加します。</p>
+
+
+
+<p>b. 右上の拡張機能から、Chrome Recovery Utility を起動します。</p>
+
+
+
+<p>c. 右上の歯車アイコンを押して、「ローカル　イメージを使用」を押します。</p>
+
+
+
+<figure class="wp-block-image size-large is-resized"><img width="1024" height="640" data-attachment-id="4457" data-permalink="https://blogbooks.net/chromebook/4445/attachment/screenshot-2024-08-03-13-50-54/" data-orig-file="/wp-content/uploads/2024/08/Screenshot-2024-08-03-13.50.54.png" data-orig-size="1920,1200" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Screenshot 2024-08-03 13.50.54" data-image-description="" data-image-caption="" data-medium-file="/wp-content/uploads/2024/08/Screenshot-2024-08-03-13.50.54-300x188.png" data-large-file="/wp-content/uploads/2024/08/Screenshot-2024-08-03-13.50.54-1024x640.png" tabindex="0" role="button" decoding="async" src="/wp-content/uploads/2024/08/Screenshot-2024-08-03-13.50.54-1024x640.png" alt="" class="wp-image-4457" style="width:386px;height:auto" srcset="/wp-content/uploads/2024/08/Screenshot-2024-08-03-13.50.54-1024x640.png 1024w, /wp-content/uploads/2024/08/Screenshot-2024-08-03-13.50.54-300x188.png 300w, /wp-content/uploads/2024/08/Screenshot-2024-08-03-13.50.54-768x480.png 768w, /wp-content/uploads/2024/08/Screenshot-2024-08-03-13.50.54-1536x960.png 1536w, /wp-content/uploads/2024/08/Screenshot-2024-08-03-13.50.54.png 1920w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>d. 先ほどダウンロードしたファイルを選択します。</p>
+
+
+
+<p>e. USB、またはSDカードを選択します。</p>
+
+
+
+<p>数分経つと、イメージがUSBやSDカードにFlashされます。</p>
+
+
+
+<p><strong>B. LinuxPCの場合</strong></p>
+
+
+
+<p>a. ターミナルを開きます。</p>
+
+
+
+<p>b. ターミナルで、</p>
+
+
+
+<pre class="wp-block-code"><code>lsblk</code></pre>
+
+
+
+<p>と入力してエンターを押します。</p>
+
+
+
+<p>すると、USBやSDカードのデバイス一覧が出てきます。</p>
+
+
+
+<p>c. 次のコマンドを入力して、イメージをFlashします。</p>
+
+
+
+<pre class="wp-block-code"><code>unzip {ダウンロードしたファイル}
+sudo dd if={ファイルのパス} of=/dev/{先ほどのデバイス名} </code></pre>
+
+
+
+<p>ここで、先程のデバイス名を入力します。<br>だいたいはsda sdb sdc です。<br>私の場合は</p>
+
+
+
+<pre class="wp-block-code"><code>unzip kukui.zip
+sudo dd if=kukui.bin of=/dev/sda</code></pre>
+
+
+
+<p class="is-style-nishiki-blocks-pro-paragraph-warning-01">ここで間違えて内部デバイスを選択してしまうと、OSが吹っ飛ぶので注意してください。</p>
+
+
+
+<h2 class="wp-block-heading">Chromebook起動</h2>
+
+
+
+<p>a. まず、Chromebookの電源を切ります。</p>
+
+
+
+<p>b. 次に、「esc + ↻ + 電源ボタン」を押します。</p>
+
+
+
+<figure class="wp-block-image size-full"><img width="259" height="194" data-attachment-id="4462" data-permalink="https://blogbooks.net/chromebook/4445/attachment/%e3%83%80%e3%82%a6%e3%83%b3%e3%83%ad%e3%83%bc%e3%83%89-7/" data-orig-file="/wp-content/uploads/2024/08/ダウンロード.jpeg" data-orig-size="259,194" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="ダウンロード" data-image-description="" data-image-caption="" data-medium-file="/wp-content/uploads/2024/08/ダウンロード.jpeg" data-large-file="/wp-content/uploads/2024/08/ダウンロード.jpeg" tabindex="0" role="button" decoding="async" src="/wp-content/uploads/2024/08/ダウンロード.jpeg" alt="" class="wp-image-4462"/></figure>
+
+
+
+<p>c. 「ctrl + d」を押して、「Enter」を押します。</p>
+
+
+
+<p>d. 電源を切ります。</p>
+
+
+
+<p>e. USBやSDカードを挿して、再び「esc + ↻ + 電源ボタン」を押します。</p>
+
+
+
+<h2 class="wp-block-heading">Sh1mmerでの操作</h2>
+
+
+
+<p>起動したら、「p」を押します。</p>
+
+
+
+<p>次に、一覧が表示されるので、Cryptosmiteを選択します。（デフォルトで「s」を押すとCryptosmiteが実行されます。）</p>
+
+
+
+<figure class="wp-block-image size-full is-resized"><img width="553" height="385" data-attachment-id="4450" data-permalink="https://blogbooks.net/chromebook/4445/attachment/screenshot-2024-08-03-13-36-55/" data-orig-file="/wp-content/uploads/2024/08/Screenshot-2024-08-03-13.36.55.png" data-orig-size="553,385" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Screenshot 2024-08-03 13.36.55" data-image-description="" data-image-caption="" data-medium-file="/wp-content/uploads/2024/08/Screenshot-2024-08-03-13.36.55-300x209.png" data-large-file="/wp-content/uploads/2024/08/Screenshot-2024-08-03-13.36.55.png" tabindex="0" role="button" decoding="async" src="/wp-content/uploads/2024/08/Screenshot-2024-08-03-13.36.55.png" alt="" class="wp-image-4450" style="width:254px;height:auto" srcset="/wp-content/uploads/2024/08/Screenshot-2024-08-03-13.36.55.png 553w, /wp-content/uploads/2024/08/Screenshot-2024-08-03-13.36.55-300x209.png 300w" sizes="(max-width: 553px) 100vw, 553px" /></figure>
+
+
+
+<p>コードが実行されたら、「y」を押します。</p>
+
+
+
+<p>ここでコードにエラーが起きなければ、再起動が自動でかかります。</p>
+
+
+
+<p>ここで、開発者モードへの移行画面がでてくる場合がありますが、5分ほど経過するとChromeOSが起動します。</p>
+
+
+
+<p>アカウントの追加画面がでてくるまで、初期設定をすすめます。</p>
+
+
+
+<p>アカウントの追加画面がでてきたら、「CTRL + ALT + SHIFT + R」を押して初期化します。</p>
+
+
+
+<p>初期化が終了すると、解除された状態のChromeOSが起動します。</p>
+
+
+
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<p><strong>引用<br></strong><a href="https://github.com/FWSmasher/CryptoSmite">https://github.com/FWSmasher/CryptoSmite</a></p>
+</blockquote>
+
+元記事: <a href="https://blogbooks.net/chromebook/4445/">https://blogbooks.net/chromebook/4445/</a>
