@@ -1,0 +1,135 @@
+{
+  "date": "2024-11-06T22:31:05",
+  "draft": false,
+  "params": {
+    "author": 47
+  },
+  "title": "v128まで Chromebookの拡張機能を解除するExploit「rigtools-v2」",
+  "summary": "今回は、Chromeの拡張機能をおっふにする方法を紹介します。",
+  "url": "/chromebook/4625/",
+  "tag": [
+    "chromebook",
+    "ブロック回避",
+    "blockunlock",
+    "128",
+    "chromebook",
+    "exploit",
+    "js",
+    "psan",
+    "クローム",
+    "回避",
+    "最新情報",
+    "unlock"
+  ],
+  "category": [
+    "chromebook",
+    "ブロック回避",
+    "ブロック解除"
+  ]
+}
+
+<p>こんにちはPsanです。</p>
+
+
+
+<p>今回は、Chromeの拡張機能をおっふにする方法を紹介します。</p>
+
+
+
+<h2 class="wp-block-heading">やり方</h2>
+
+
+
+<h3 class="wp-block-heading">1.セットアップ</h3>
+
+
+
+<p>まず、新しいタブを開き、</p>
+
+
+
+<p>devtools://devtools/bundled/devtools_app.html</p>
+
+
+
+<p>このURLを貼り付けてエンターを押します。</p>
+
+
+
+<p>その後、</p>
+
+
+
+<p><code>devtools://devtools/bundled/devtools_app.html?experiments=true&amp;wss=rig.ccsd.store</code></p>
+
+
+
+<p>このURLを、新しいタブで開きます。</p>
+
+
+
+<h3 class="wp-block-heading">2.Exploitの実行</h3>
+
+
+
+<p>開くと、</p>
+
+
+
+<figure class="wp-block-image size-large is-resized"><img width="1024" height="640" data-attachment-id="4627" data-permalink="https://blogbooks.net/chromebook/4625/attachment/screenshot-2024-10-28-08-33-05/" data-orig-file="/wp-content/uploads/2024/10/Screenshot-2024-10-28-08.33.05.jpg" data-orig-size="1920,1200" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Screenshot 2024-10-28 08.33.05" data-image-description="" data-image-caption="" data-medium-file="/wp-content/uploads/2024/10/Screenshot-2024-10-28-08.33.05-300x188.jpg" data-large-file="/wp-content/uploads/2024/10/Screenshot-2024-10-28-08.33.05-1024x640.jpg" tabindex="0" role="button" decoding="async" src="/wp-content/uploads/2024/10/Screenshot-2024-10-28-08.33.05-1024x640.jpg" alt="" class="wp-image-4627" style="width:544px;height:auto" srcset="/wp-content/uploads/2024/10/Screenshot-2024-10-28-08.33.05-1024x640.jpg 1024w, /wp-content/uploads/2024/10/Screenshot-2024-10-28-08.33.05-300x188.jpg 300w, /wp-content/uploads/2024/10/Screenshot-2024-10-28-08.33.05-768x480.jpg 768w, /wp-content/uploads/2024/10/Screenshot-2024-10-28-08.33.05-1536x960.jpg 1536w, /wp-content/uploads/2024/10/Screenshot-2024-10-28-08.33.05.jpg 1920w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>このようなページが開くので、</p>
+
+
+
+<figure class="wp-block-image size-large is-resized"><img width="1024" height="640" data-attachment-id="4628" data-permalink="https://blogbooks.net/chromebook/4625/attachment/edits/" data-orig-file="/wp-content/uploads/2024/10/edits.jpg" data-orig-size="1920,1200" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="edits" data-image-description="" data-image-caption="" data-medium-file="/wp-content/uploads/2024/10/edits-300x188.jpg" data-large-file="/wp-content/uploads/2024/10/edits-1024x640.jpg" tabindex="0" role="button" decoding="async" src="/wp-content/uploads/2024/10/edits-1024x640.jpg" alt="" class="wp-image-4628" style="width:507px;height:auto" srcset="/wp-content/uploads/2024/10/edits-1024x640.jpg 1024w, /wp-content/uploads/2024/10/edits-300x188.jpg 300w, /wp-content/uploads/2024/10/edits-768x480.jpg 768w, /wp-content/uploads/2024/10/edits-1536x960.jpg 1536w, /wp-content/uploads/2024/10/edits.jpg 1920w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>このリクエストをダブルクリックします。</p>
+
+
+
+<figure class="wp-block-video"><video controls src="/wp-content/uploads/2024/10/Screen-recording-2024-10-28-08.35.17.webm"></video></figure>
+
+
+
+<p>すると、</p>
+
+
+
+<figure class="wp-block-image size-large is-resized"><img width="1024" height="640" data-attachment-id="4630" data-permalink="https://blogbooks.net/chromebook/4625/attachment/screenshot-2024-10-28-08-36-41/" data-orig-file="/wp-content/uploads/2024/10/Screenshot-2024-10-28-08.36.41.png" data-orig-size="1920,1200" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Screenshot 2024-10-28 08.36.41" data-image-description="" data-image-caption="" data-medium-file="/wp-content/uploads/2024/10/Screenshot-2024-10-28-08.36.41-300x188.png" data-large-file="/wp-content/uploads/2024/10/Screenshot-2024-10-28-08.36.41-1024x640.png" tabindex="0" role="button" decoding="async" src="/wp-content/uploads/2024/10/Screenshot-2024-10-28-08.36.41-1024x640.png" alt="" class="wp-image-4630" style="width:477px;height:auto" srcset="/wp-content/uploads/2024/10/Screenshot-2024-10-28-08.36.41-1024x640.png 1024w, /wp-content/uploads/2024/10/Screenshot-2024-10-28-08.36.41-300x188.png 300w, /wp-content/uploads/2024/10/Screenshot-2024-10-28-08.36.41-768x480.png 768w, /wp-content/uploads/2024/10/Screenshot-2024-10-28-08.36.41-1536x960.png 1536w, /wp-content/uploads/2024/10/Screenshot-2024-10-28-08.36.41.png 1920w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>こんなページが自動で開きます。</p>
+
+
+
+<h3 class="wp-block-heading">3.拡張機能を無効化する</h3>
+
+
+
+<p>ページが開いたら、</p>
+
+
+
+<p>GForms Locked Mode (on all enrolled cbs)</p>
+
+
+
+<p>を押します。</p>
+
+
+
+<p>すると、拡張機能一覧が表示されるので、OFFにしたい拡張機能を選んでボタンを押すと、拡張機能がOFFになります。</p>
+
+
+
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<p>詳細は<a href="https://github.com/MunyDev/rigtools-v2">https://github.com/MunyDev/rigtools-v2</a>こちらをご覧ください。</p>
+</blockquote>
+
+元記事: <a href="https://blogbooks.net/chromebook/4625/">https://blogbooks.net/chromebook/4625/</a>

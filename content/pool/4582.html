@@ -1,0 +1,423 @@
+{
+  "date": "2024-11-06T22:30:17",
+  "draft": false,
+  "params": {
+    "author": 47
+  },
+  "title": "v124まで ChromebookのPolicyを完全に解除する方法",
+  "summary": "今回は、v124でPolicyを解除する方法を紹介します。この方法では、Factory install shimがリークされていない人でも使用することができます。",
+  "url": "/chromebook/4582/",
+  "tag": [
+    "chromebook",
+    "chrome",
+    "chromebook",
+    "policy",
+    "クローム",
+    "回避",
+    "最新情報",
+    "unlock"
+  ],
+  "category": [
+    "chromebook"
+  ]
+}
+
+<p>こんにちはPsanです。</p>
+
+
+
+<p>今回は、v124でPolicyを解除する方法を紹介します。</p>
+
+
+
+<p>この方法では、Factory install shimがリークされていない人でも使用することができます。</p>
+
+
+
+<p class="is-style-nishiki-blocks-pro-paragraph-warning-01">この方法は、市のChromebookでは行わないでください。<br>あくまでも自己責任なので、自分のChromebookでやりましょう。</p>
+
+
+
+<h2 class="wp-block-heading">必要なもの</h2>
+
+
+
+<p>・Chromebook　（バージョン124以下）</p>
+
+
+
+<p>・USBまたはSDカード</p>
+
+
+
+<p>・USBやSDカードに書き込める端末</p>
+
+
+
+<p>・それなりの知識</p>
+
+
+
+<h2 class="wp-block-heading">やり方</h2>
+
+
+
+<h3 class="wp-block-heading">バージョンとボード名の確認</h3>
+
+
+
+<p>まず、自分のボード名を確認します。</p>
+
+
+
+<ol class="wp-block-list">
+<li>まず、chrome://version にChromebookでアクセスします。</li>
+
+
+
+<li>Google Chrome :　の右の数字がバージョンです</li>
+
+
+
+<li>プラットフォームの、stable-channnelのあとの文字がボード名です。</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-large is-resized"><img width="882" height="552" data-attachment-id="4586" data-permalink="https://blogbooks.net/screenshot-2024-10-13-17-12-24-2/" data-orig-file="/wp-content/uploads/2024/10/Screenshot-2024-10-13-17.12.24-edited.jpg" data-orig-size="882,552" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Screenshot 2024-10-13 17.12.24" data-image-description="" data-image-caption="" data-medium-file="/wp-content/uploads/2024/10/Screenshot-2024-10-13-17.12.24-edited-300x188.jpg" data-large-file="/wp-content/uploads/2024/10/Screenshot-2024-10-13-17.12.24-edited.jpg" tabindex="0" role="button" decoding="async" src="/wp-content/uploads/2024/10/Screenshot-2024-10-13-17.12.24-edited.jpg" alt="" class="wp-image-4586" style="width:531px;height:auto" srcset="/wp-content/uploads/2024/10/Screenshot-2024-10-13-17.12.24-edited.jpg 882w, /wp-content/uploads/2024/10/Screenshot-2024-10-13-17.12.24-edited-300x188.jpg 300w, /wp-content/uploads/2024/10/Screenshot-2024-10-13-17.12.24-edited-768x481.jpg 768w" sizes="(max-width: 882px) 100vw, 882px" /></figure>
+
+
+
+<p>僕の場合は、バージョンが128 ボード名がkukuiです。</p>
+
+
+
+<h3 class="wp-block-heading">USB準備</h3>
+
+
+
+<p>次に、自分のボード名にあったイメージファイルをダウンロードします</p>
+
+
+
+<div class="wp-block-group"><div class="wp-block-group__inner-container is-layout-constrained wp-block-group-is-layout-constrained">
+<ul class="wp-block-list">
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_ambassador.zip">ambassador</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_asuka.zip">asuka</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_asurada.zip">asurada</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_atlas.zip">atlas</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_banjo.zip">banjo</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_banon.zip">banon</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_bob.zip">bob</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_brask.zip">brask</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_brya.zip">bray</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_buddy.zip">buddy</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_caroline.zip">caroline</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_cave.zip">cave</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_celes.zip">celes</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_chell.zip">chell</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_cherry.zip">cherry</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_clapper.zip">clapper</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_constitution.zip">constitution</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_coral.zip">coral</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_corsola.zip">corsola</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_cyan.zip">cyan</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_dedede.zip">dedede</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_drallion.zip">drallion</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_edgar.zip">edgar</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_elm.zip">elm</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_endeavour.zip">endeavour</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_enguarde.zip">enguarde</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_eve.zip">eve</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_excelsior.zip">excelsior</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_fizz.zip">fizz</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_fizz-cfm.zip">fizz-cfm</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_gandof.zip">gandof</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_glimmer.zip">glimmer</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_grunt.zip">grunt</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_guado.zip">guado</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_guybrush.zip">guybrush</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_hana.zip">hana</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_hatch.zip">hatch</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_heli.zip">heli</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_jacuzzi.zip">jacuzzi</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_kalista.zip">kalista</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_kalista-cfm.zip">kalista-cfm</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_kefka.zip">kefka</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_kevin.zip">kevin</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_kukui.zip">kukui</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_lars.zip">lars</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_lulu.zip">lulu</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_nami.zip">nami</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_nautilus.zip">nautilus</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_ninja.zip">ninja</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_nissa.zip">nissa</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_nocturne.zip">nocturne</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_octopus.zip">octopus</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_orco.zip">orco</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_puff.zip">puff</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_pyro.zip">pyro</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_rammus.zip">rammus</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_reef.zip">reef</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_reks.zip">reks</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_relm.zip">relm</a></li>
+
+
+
+<li><a href="https://dl.darkn.bio/api/raw?path=/BadRecovery/postinst/badrecovery_rex.zip">rex</a></li>
+</ul>
+</div></div>
+
+
+
+<p>ダウンロードができたら、そのZIPファイルを展開して、</p>
+
+
+
+<p>Chrome recovery utility などのツールを使って、イメージファイルをUSBやSDカードに書き込みます。</p>
+
+
+
+<h3 class="wp-block-heading">起動する</h3>
+
+
+
+<p>Chromebookの電源を切ります。</p>
+
+
+
+<p>次に、「esc + refresh + 電源ボダン」を押して、リカバリーモードに入ります。</p>
+
+
+
+<p>USBを挿し込みます。</p>
+
+
+
+<p class="is-style-nishiki-blocks-pro-paragraph-warning-01">開発者モードとして、USBを挿し込まないでください。解除に失敗します。&nbsp;</p>
+
+
+
+<p>イメージの検証が開始されます。</p>
+
+
+
+<p class="is-style-nishiki-blocks-pro-paragraph-warning-01">ここで、「お使いのChromeOS<em>リカバリイメージが最新ではありません</em>。」と言われた場合、バージョンが新しい場合があります。この場合この方法は使用できません。</p>
+
+
+
+<p>検証が終わると、リカバリーが開始されます。</p>
+
+
+
+<p>リカバリーの中盤くらいで、exploitが実行されて、Bashシェルに移ります。</p>
+
+
+
+<figure class="wp-block-image size-large is-resized"><img width="1024" height="700" data-attachment-id="4606" data-permalink="https://blogbooks.net/chromebook/4582/attachment/9db0af2d-1de4-4887-8f8a-403fd9949d0c/" data-orig-file="/wp-content/uploads/2024/10/9DB0AF2D-1DE4-4887-8F8A-403FD9949D0C.jpg" data-orig-size="1920,1313" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="9DB0AF2D-1DE4-4887-8F8A-403FD9949D0C" data-image-description="" data-image-caption="" data-medium-file="/wp-content/uploads/2024/10/9DB0AF2D-1DE4-4887-8F8A-403FD9949D0C-300x205.jpg" data-large-file="/wp-content/uploads/2024/10/9DB0AF2D-1DE4-4887-8F8A-403FD9949D0C-1024x700.jpg" tabindex="0" role="button" decoding="async" src="/wp-content/uploads/2024/10/9DB0AF2D-1DE4-4887-8F8A-403FD9949D0C-1024x700.jpg" alt="" class="wp-image-4606" style="width:516px;height:auto" srcset="/wp-content/uploads/2024/10/9DB0AF2D-1DE4-4887-8F8A-403FD9949D0C-1024x700.jpg 1024w, /wp-content/uploads/2024/10/9DB0AF2D-1DE4-4887-8F8A-403FD9949D0C-300x205.jpg 300w, /wp-content/uploads/2024/10/9DB0AF2D-1DE4-4887-8F8A-403FD9949D0C-768x525.jpg 768w, /wp-content/uploads/2024/10/9DB0AF2D-1DE4-4887-8F8A-403FD9949D0C-1536x1050.jpg 1536w, /wp-content/uploads/2024/10/9DB0AF2D-1DE4-4887-8F8A-403FD9949D0C.jpg 1920w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>この画面になったら、エンターキーを押します</p>
+
+
+
+<p>すると自動で電源が切れます。</p>
+
+
+
+<p>あとは、自分のChromebookを開発者モードに移行するだけです。</p>
+
+
+
+<h2 class="wp-block-heading">最後に</h2>
+
+
+
+<p>今回のやり方は、少し難しいので、わからないことがあれば、質問してください。</p>
+
+
+
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<p>引用<br><a href="https://github.com/BinBashBanana/badrecovery">https://github.com/BinBashBanana/badrecovery</a></p>
+</blockquote>
+
+
+
+<p></p>
+
+元記事: <a href="https://blogbooks.net/chromebook/4582/">https://blogbooks.net/chromebook/4582/</a>
