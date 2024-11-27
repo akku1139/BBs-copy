@@ -1,0 +1,172 @@
+{
+  "date": "2024-11-26T16:29:53",
+  "draft": false,
+  "params": {
+    "author": 47
+  },
+  "title": "Youtubeを見る方法",
+  "summary": "今回は、学校のChromebookなどで、Youtubeの見れるようにしたサイトを作りました。",
+  "url": "/chromebook/4528/",
+  "tag": [
+    "chromebook",
+    "ブロック回避",
+    "blockunlock",
+    "chrome",
+    "chromebook",
+    "youtube",
+    "クローム",
+    "クロームブック",
+    "ブロック",
+    "回避"
+  ],
+  "category": [
+    "chromebook",
+    "ブロック回避",
+    "ブロック解除"
+  ]
+}
+
+<p>こんにちはPsanです。</p>
+
+
+
+<p>今回は、学校のChromebookなどで、Youtubeの見れるようにしたサイトを作りました。</p>
+
+
+
+<h2 class="wp-block-heading">できること</h2>
+
+
+
+<ul class="wp-block-list">
+<li>Youtube検索</li>
+
+
+
+<li>動画の再生</li>
+
+
+
+<li>動画のダウンロード</li>
+</ul>
+
+
+
+<p>などなど&#8230;..</p>
+
+
+
+<p>機能は追加する予定です。</p>
+
+
+
+<h2 class="wp-block-heading">閲覧方法</h2>
+
+
+
+<p>まず、</p>
+
+
+
+<p><a href="https://youtube.psannetwork.net">https://youtube.psannetwork.net</a> (11/26 20:26時点確認 &#8211; メンテナンス中)</p>
+
+
+
+<p><a href="https://youtube.mq.gy/">https://youtube.mq.gy/</a></p>
+
+
+
+<p>にアクセスします。(自宅サバなので停止している可能性あり)</p>
+
+
+
+<figure class="wp-block-image size-large is-resized"><img width="1024" height="640" data-attachment-id="4530" data-permalink="https://blogbooks.net/chromebook/4528/attachment/screenshot-2024-09-07-08-08-45/" data-orig-file="/wp-content/uploads/2024/09/Screenshot-2024-09-07-08.08.45.png" data-orig-size="1920,1200" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Screenshot 2024-09-07 08.08.45" data-image-description="" data-image-caption="" data-medium-file="/wp-content/uploads/2024/09/Screenshot-2024-09-07-08.08.45-300x188.png" data-large-file="/wp-content/uploads/2024/09/Screenshot-2024-09-07-08.08.45-1024x640.png" decoding="async" src="/wp-content/uploads/2024/09/Screenshot-2024-09-07-08.08.45-1024x640.png" alt="" class="wp-image-4530" style="width:579px;height:auto" srcset="/wp-content/uploads/2024/09/Screenshot-2024-09-07-08.08.45-1024x640.png 1024w, /wp-content/uploads/2024/09/Screenshot-2024-09-07-08.08.45-300x188.png 300w, /wp-content/uploads/2024/09/Screenshot-2024-09-07-08.08.45-768x480.png 768w, /wp-content/uploads/2024/09/Screenshot-2024-09-07-08.08.45-1536x960.png 1536w, /wp-content/uploads/2024/09/Screenshot-2024-09-07-08.08.45.png 1920w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>検索欄に好きなものを入力して検索できます。</p>
+
+
+
+<h2 class="wp-block-heading">自分でホストする方法</h2>
+
+
+
+<p>今のところサーバーがまだ安定していないので、自分でサーバーを立てると比較的高速に閲覧できます。</p>
+
+
+
+<h6 class="wp-block-heading">必要なパッケージ</h6>
+
+
+
+<p>nodejsの最新バージョン</p>
+
+
+
+<p>pm2</p>
+
+
+
+<h6 class="wp-block-heading">nodejs pm2 のインストール方法</h6>
+
+
+
+<p>Debian系の場合</p>
+
+
+
+<pre class="wp-block-code"><code>sudo apt install curl
+curl -Ls https://raw.githubusercontent.com/hirotomoki12345/chrome/main/chroot/setup_nodejs.sh -o setup_nodejs.sh
+bash setup_nodejs.sh
+npm install -g pm2</code></pre>
+
+
+
+<h6 class="wp-block-heading">ホスト方法</h6>
+
+
+
+<p>ターミナルで、</p>
+
+
+
+<pre class="wp-block-code"><code>curl -Ls https://raw.githubusercontent.com/hirotomoki12345/youtube-searcher/main/set.sh -o set.sh</code></pre>
+
+
+
+<p>を入力します。</p>
+
+
+
+<p>次に、</p>
+
+
+
+<pre class="wp-block-code"><code>bash ./set.sh</code></pre>
+
+
+
+<p>を実行します。</p>
+
+
+
+<figure class="wp-block-image size-large is-resized"><img width="1024" height="640" data-attachment-id="4532" data-permalink="https://blogbooks.net/chromebook/4528/attachment/screenshot-2024-09-07-08-16-52/" data-orig-file="/wp-content/uploads/2024/09/Screenshot-2024-09-07-08.16.52.png" data-orig-size="1920,1200" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Screenshot 2024-09-07 08.16.52" data-image-description="" data-image-caption="" data-medium-file="/wp-content/uploads/2024/09/Screenshot-2024-09-07-08.16.52-300x188.png" data-large-file="/wp-content/uploads/2024/09/Screenshot-2024-09-07-08.16.52-1024x640.png" decoding="async" src="/wp-content/uploads/2024/09/Screenshot-2024-09-07-08.16.52-1024x640.png" alt="" class="wp-image-4532" style="width:523px;height:auto" srcset="/wp-content/uploads/2024/09/Screenshot-2024-09-07-08.16.52-1024x640.png 1024w, /wp-content/uploads/2024/09/Screenshot-2024-09-07-08.16.52-300x188.png 300w, /wp-content/uploads/2024/09/Screenshot-2024-09-07-08.16.52-768x480.png 768w, /wp-content/uploads/2024/09/Screenshot-2024-09-07-08.16.52-1536x960.png 1536w, /wp-content/uploads/2024/09/Screenshot-2024-09-07-08.16.52.png 1920w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>こんな画面が出てくるので、1 をおします。</p>
+
+
+
+<p>しばらくすると、セットアップが完了します。</p>
+
+
+
+<pre class="wp-block-code"><code>http:&#47;&#47;localhost:3503</code></pre>
+
+
+
+<p>にアクセスすると、サイトが表示されます。</p>
+
+元記事: <a href="https://blogbooks.net/chromebook/4528/">https://blogbooks.net/chromebook/4528/</a>
