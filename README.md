@@ -31,3 +31,11 @@ BlogBooksの投稿をコピーしたサイトを作り、多くの人に規制�
 今のところ `Copyright 2024 akku` 。
 
 今後自由なライセンスを指定します。
+
+## メモ
+
+https://qiita.com/DaisukeNishi/items/18332bf947c3b6bb88a1
+https://stackoverflow.com/questions/34670533/wordpress-rest-api-wp-api-404-error-cannot-access-the-wordpress-rest-api
+https://labor.ewigleere.net/2021/11/06/wordpress-restapi-404notfound-permalink-basic/
+
+`/wp-json` の代わりに `/index.php?rest_route=/` や `/index.php/wp-json` を試す
