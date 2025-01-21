@@ -31,9 +31,9 @@ posts.forEach((post) => {
     params: {
       author: post.author
     },
-    title: decodeURIComponent(unescape(post.title.rendered)),
+    title: unescape(post.title.rendered),
     summary: post.excerpt.rendered,
-    url: new URL(post.link).pathname,
+    url: decodeURIComponent(new URL(post.link).pathname),
     tag: post.nishiki_blocks_pro.terms.map((t) => decodeURIComponent(t.slug)),
     category: post.nishiki_blocks_pro.category.map((t) => t.name),
   }, null, 2) + "\n" + post.content.rendered.replaceAll("https://blogbooks.net/wp-content/", "/wp-content/")
