@@ -31,7 +31,7 @@ posts.forEach((post) => {
     params: {
       author: post.author
     },
-    title: unescape(post.title.rendered),
+    title: decodeURIComponent(unescape(post.title.rendered)),
     summary: post.excerpt.rendered,
     url: new URL(post.link).pathname,
     tag: post.nishiki_blocks_pro.terms.map((t) => decodeURIComponent(t.slug)),
