@@ -1,5 +1,6 @@
 import type { WP_REST_API_Posts } from "./types/wp.ts";
 import "./types/deno.d.ts";
+import { unescape } from "jsr:@std/html/entities"
 
 const sleepMs = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -30,7 +31,7 @@ posts.forEach((post) => {
     params: {
       author: post.author
     },
-    title: post.title.rendered,
+    title: unescape(post.title.rendered),
     summary: post.excerpt.rendered,
     url: new URL(post.link).pathname,
     tag: post.nishiki_blocks_pro.terms.map((t) => decodeURIComponent(t.slug)),
