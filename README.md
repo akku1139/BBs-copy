@@ -10,6 +10,10 @@ BlogBooksの投稿をコピーしたサイトを作り、多くの人に規制�
 
 は https://blogbooks.net からのコピー及び加工物であり、 [CC BY-NC 4.0 ライセンス](https://creativecommons.org/licenses/by-nc/4.0/deed.ja) が適用されます。
 
+新しいサーバーになっても同じはずです
+
+https://blogbooks.net/%E9%81%8B%E5%96%B6%E3%82%88%E3%82%8A/1600/
+
 <hr>
 
 - `/scripts/types`
