@@ -1,0 +1,190 @@
+{
+  "date": "2025-02-24T23:50:32",
+  "draft": false,
+  "params": {
+    "author": 47
+  },
+  "title": "Icarus Exploit",
+  "summary": "こんにちは、Psanです。 今回は、ChromebookのPolicyを解除する方法を紹介します。 &#8230;",
+  "url": "/uncategorized/4843/",
+  "tag": [
+    "chromebook",
+    "ブロック回避",
+    "blockunlock",
+    "uncategorized"
+  ],
+  "category": [
+    "chromebook",
+    "ブロック回避",
+    "ブロック解除",
+    "未分類"
+  ]
+}
+
+<p>こんにちは、Psanです。</p>
+
+
+
+<p>今回は、ChromebookのPolicyを解除する方法を紹介します。</p>
+
+
+
+<h2 class="wp-block-heading">必要なもの</h2>
+
+
+
+<ul class="wp-block-list">
+<li>Chromebook（バージョン129以下のもの）</li>
+
+
+
+<li>USBまたは、SDカード</li>
+
+
+
+<li>USBに書き込みができるPC</li>
+
+
+
+<li>ProxyサーバーをホストするためのPC（パッケージがインストール済み）</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading">バージョンについて</h3>
+
+
+
+<p>バージョンは、カーネルバージョンに依存してダウングレードができるので、バージョンが132までの人は、125までダウングレードすることができます。<br>もし、129より高いバージョンの人は、ダウングレードしておきましょう。<br>125がおすすめです。</p>
+
+
+
+<h2 class="wp-block-heading">やり方</h2>
+
+
+
+<h3 class="wp-block-heading">Proxyサーバー側のセットアップ</h3>
+
+
+
+<p>1. お使いのPCを起動します。</p>
+
+
+
+<p>2. nodejs、gitがインストールされていることを確認します（インストール方法はネットに転がっているので、今回は行いません。）</p>
+
+
+
+<p>3. ターミナルやコマンドプロンプトを開きます。</p>
+
+
+
+<p>4. Repositoryをクローンします。</p>
+
+
+
+<pre class="wp-block-code"><code>git clone --recursive https://github.com/MunyDev/icarus/
+cd icarus
+cd httpmitm</code></pre>
+
+
+
+<p>5. 次のコマンドを、実行してください。</p>
+
+
+
+<pre class="wp-block-code"><code>make start-server</code></pre>
+
+
+
+<p>実行したら、urlが出てくるので、そのまま閉じないでください。<br>Wifiの設定から、自分のip4をメモしておいてください。</p>
+
+
+
+<h3 class="wp-block-heading">USBの準備</h3>
+
+
+
+<p>1. Shimをダウンロードします。<br>自分のボード名のShimをDarknさんのURLからダウンロードしてください。<br><a href="https://dl.darkn.bio/Icarus">https://dl.darkn.bio/Icarus</a></p>
+
+
+
+<p>2. Chrome Recovery Utility を使って、USBにIcarusのShimを書き込みます。</p>
+
+
+
+<h3 class="wp-block-heading">USBを起動する</h3>
+
+
+
+<p>1. いつもと同じように、Chromebookで、esc + refresh + powerを押して、リカバリーモードに入ります。</p>
+
+
+
+<p>2. Ctrl + d を押して、エンターを押し、開発者モードに入ります。</p>
+
+
+
+<p>3. 再び、esc + refresh + power を押して、USBを挿します。</p>
+
+
+
+<p>4. 起動したら、自動でステートフル パーティションが変更されるので、待ちます。</p>
+
+
+
+<p>5. 終わったら、エンターとかのキーを押すと、自動で再起動がかかります。</p>
+
+
+
+<h3 class="wp-block-heading">セットアップ画面</h3>
+
+
+
+<p>1. 再起動されると、初期設定画面が表示されます。</p>
+
+
+
+<p>2. ようこそ　の画面で、右下からWifiを接続します。</p>
+
+
+
+<p>3. 接続したWifiの設定を右下から開きます。</p>
+
+
+
+<p>4. 設定が開いたら、一番下までスクロールして、Proxy設定を手動にします。</p>
+
+
+
+<p>5. 保護されたProxyの項目に、先程ホストした、自分のPCのIPアドレスを入れます。</p>
+
+
+
+<p class="is-style-nishiki-blocks-pro-paragraph-warning-01">絶対に、自分のProxyサーバーを使うようにしてください。<br>Chromebookが乗っ取られる可能性があります。</p>
+
+
+
+<p>6. 設定を保存して、Wifiを一度OFFにしてから、再度同じWifiに接続します。</p>
+
+
+
+<p>7. 通常通り、セットアップすると、登録が解除されます。</p>
+
+
+
+<p>8. セットアップが完了して、登録が解除されたら、Powerwashして開発者モードにし、MurkModを使用することをおすすめします。</p>
+
+
+
+<h2 class="wp-block-heading">引用</h2>
+
+
+
+<p><a href="https://github.com/MunyDev/icarus">https://github.com/MunyDev/icarus</a></p>
+
+
+
+<p></p>
+
+元記事: <a href="https://blogbooks.net/uncategorized/4843/">https://blogbooks.net/uncategorized/4843/</a>
