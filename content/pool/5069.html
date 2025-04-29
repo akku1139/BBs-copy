@@ -5,17 +5,34 @@
     "author": 48
   },
   "title": "chromebookのフィルタリングを解除する方法!",
-  "summary": "挨拶 こんにちは。新しくblogbooksの運営になったtorokuroです 今回は、拡張機能のフィ&#8230;",
+  "summary": "こんにちは。新しくblogbooksの運営になったtorokuroです。今回は、拡張機能のフィルタリングを解除する方法をお伝えします",
   "url": "/chromebook/5069/",
   "tag": [
     "chromebook",
-    "blockunlock"
+    "ブロック回避",
+    "blockunlock",
+    "chrome",
+    "chromebook",
+    "cisco-umbrella",
+    "i-filter",
+    "i-filtercloud-agent",
+    "soliton-dns-guard-agent",
+    "クローム",
+    "クロームブック",
+    "ブロック",
+    "回避",
+    "unlock"
   ],
   "category": [
     "chromebook",
+    "ブロック回避",
     "ブロック解除"
   ]
 }
+
+<p class="is-style-nishiki-blocks-pro-paragraph-info-01">情報の不足により、語弊を招くため修正させていただきました By &#8220;曇りに曇ったクラウドサービスlocaler&#8221;</p>
+
+
 
 <h2 class="wp-block-heading">挨拶</h2>
 
@@ -29,19 +46,37 @@
 
 
 
-<h2 class="wp-block-heading">注意点(これに当てはまる人はできない可能性があります)</h2>
+<h2 class="wp-block-heading">注意点</h2>
 
 
 
-<p>・フィルタリングの拡張機能のManifestが3である場合(やってできなかったらManifestが3だと思ってください)</p>
+<p class="is-style-nishiki-blocks-pro-paragraph-point-04">以下になければ、この方法は使えない可能性が高いですが、試す価値はあると思います。<br>(一覧に載ってないもので使えたものがあれば、ご報告ください！)</p>
 
 
 
-<p>・DNSでブロックされている場合、(ifilterだったら<a href="https://if54-r.digitalartscloud.com/">if54-r.digitalartscloud.com</a>と検索バーに表示されている場合 できなくはないですが殆どの場合組織によって無効化されています)</p>
+<h3 class="wp-block-heading">この方法が使える可能性があるフィルタリング</h3>
 
 
 
-<p>・chrome://flagsが開けない場合<br>・chrome://policyに<strong>ExtensionManifestV2Availability</strong>という項目があり、その値が<strong>2</strong>になっている場合</p>
+<ul class="wp-block-list">
+<li><strong>i-FILTER@Cloud Agent</strong></li>
+
+
+
+<li><strong>Cisco Umbrella Chromebook client (Ext)</strong><br> -> これについては、Extのほうが動かなければAppも含め無力化できるらしいです</li>
+
+
+
+<li><strong>Soliton DNS Guard Agent</strong></li>
+</ul>
+
+
+
+<h3 class="wp-block-heading">例外 (以下の場合、上に該当してても使えません)</h3>
+
+
+
+<p>・<code>chrome://flags</code> が、開けない場合<br>・chrome://policyに、「<strong>ExtensionManifestV2Availability」</strong>という項目でその値が <strong>2</strong> になっている場合</p>
 
 
 
@@ -49,27 +84,43 @@
 
 
 
-<p>1.chrome://flagsを開く</p>
+<ol class="wp-block-list">
+<li><code>chrome://flags</code> を開く</li>
+</ol>
 
 
 
-<p>2.検索欄で<strong>Extension Manifest V2 Deprecation</strong>と入力する</p>
+<figure class="wp-block-image size-large is-resized"><img data-dominant-color="2a2c30" data-has-transparency="false" loading="lazy" width="1024" height="576" decoding="async" src="/wp-content/uploads/2025/04/Screenshot-2025-04-28-22.58.14-1024x576.png" alt="" class="wp-image-5088 not-transparent" style="--dominant-color: #2a2c30; width:915px;height:auto" srcset="/wp-content/uploads/2025/04/Screenshot-2025-04-28-22.58.14-1024x576.png 1024w, /wp-content/uploads/2025/04/Screenshot-2025-04-28-22.58.14-300x169.png 300w, /wp-content/uploads/2025/04/Screenshot-2025-04-28-22.58.14-768x432.png 768w, /wp-content/uploads/2025/04/Screenshot-2025-04-28-22.58.14-640x360.png 640w, /wp-content/uploads/2025/04/Screenshot-2025-04-28-22.58.14-64x36.png 64w, /wp-content/uploads/2025/04/Screenshot-2025-04-28-22.58.14.png 1366w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
-<p>3.でてきたflagsをすべて<strong>Enabled</strong>にする</p>
+<ol start="2" class="wp-block-list">
+<li>検索欄で「<code>Extension Manifest V2 Deprecation</code>」と入力する</li>
+</ol>
 
 
 
-<p>4.再起動をする</p>
+<figure class="wp-block-image size-large is-resized"><img data-dominant-color="272829" data-has-transparency="false" loading="lazy" width="1024" height="576" decoding="async" src="/wp-content/uploads/2025/04/image-1-1024x576.png" alt="" class="wp-image-5089 not-transparent" style="--dominant-color: #272829; width:914px;height:auto" srcset="/wp-content/uploads/2025/04/image-1-1024x576.png 1024w, /wp-content/uploads/2025/04/image-1-300x169.png 300w, /wp-content/uploads/2025/04/image-1-768x432.png 768w, /wp-content/uploads/2025/04/image-1-640x360.png 640w, /wp-content/uploads/2025/04/image-1-64x36.png 64w, /wp-content/uploads/2025/04/image-1.png 1366w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<ol start="3" class="wp-block-list">
+<li>でてきた項目で、flagsを3つすべて「<code>Default</code>」から「<code>Enabled</code>」にする</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-large is-resized"><img data-dominant-color="282b2c" data-has-transparency="false" loading="lazy" width="1024" height="576" decoding="async" src="/wp-content/uploads/2025/04/image-2-1024x576.png" alt="" class="wp-image-5090 not-transparent" style="--dominant-color: #282b2c; width:913px;height:auto" srcset="/wp-content/uploads/2025/04/image-2-1024x576.png 1024w, /wp-content/uploads/2025/04/image-2-300x169.png 300w, /wp-content/uploads/2025/04/image-2-768x432.png 768w, /wp-content/uploads/2025/04/image-2-640x360.png 640w, /wp-content/uploads/2025/04/image-2-64x36.png 64w, /wp-content/uploads/2025/04/image-2.png 1366w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<ol start="4" class="wp-block-list">
+<li>右下の「再起動」をクリックして、再起動する</li>
+</ol>
 
 
 
 <p>以上です</p>
-
-
-
-<p class="is-style-nishiki-blocks-pro-paragraph-checkmark-01">この記事はifilterを主にして話を進めていますので、他のフィルターをお使いになられている方は<br>自分のフィルタリングの名前に置き換えてお読みください</p>
 
 
 
@@ -81,18 +132,10 @@
 
 
 
-<p>Name:torokuro</p>
-
-
-
-<p>年齢 ???(Discordの規約にある13には達してるよ)<br>好きなこと:tetris(tetrio)</p>
+<p>Name: <code>torokuro</code><br>年齢: <code>???(Discordの規約にある13には達してるよ)</code><br>好きなこと: <code>tetris(tetrio)</code></p>
 
 
 
 <p>一言<br>新しく運営に就任しましたtorokuroです!<br>記事をたくさんかけるように精進しますので皆さんどうぞよろしくお願いいたします!</p>
-
-
-
-<p></p>
 
 元記事: <a href="https://blogbooks.net/chromebook/5069/">https://blogbooks.net/chromebook/5069/</a>
