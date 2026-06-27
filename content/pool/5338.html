@@ -1,0 +1,204 @@
+{
+  "date": "2026-06-27T15:30:00",
+  "draft": false,
+  "params": {
+    "author": 47
+  },
+  "title": "KV6まで対応 – Chromebook Policy削除 – QuickSilver",
+  "summary": "お久しぶり。Psanです。 今日は、最新のChromeOS（v125〜v142）でも動作する、期待の&#8230;",
+  "url": "/chromebook/5338/",
+  "tag": [
+    "chromebook",
+    "blockunlock"
+  ],
+  "category": [
+    "chromebook",
+    "ブロック解除"
+  ]
+}
+
+<p class="wp-block-paragraph">お久しぶり。Psanです。</p>
+
+
+
+<p class="wp-block-paragraph">今日は、最新のChromeOS（v125〜v142）でも動作する、期待の新手法「QuickSilver」について詳しく紹介します。</p>
+
+
+
+<p class="wp-block-paragraph">これまでのSH1MMER対策（Keyroll）で絶望していた人も多いと思いますが、この方法ならまだ道は残されています。</p>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity" />
+
+
+
+<h3 class="wp-block-heading">実行するための条件</h3>
+
+
+
+<p class="wp-block-paragraph">まずは自分の端末が条件を満たしているか確認してください。</p>
+
+
+
+<ul class="wp-block-list">
+<li>KV（カーネルバージョン）が6以下であることOS自体のバージョン制限は緩いですが、組織の設定によってKernverが高い場合があります。もしKVが6以下なら、実行前に必ずv142以下へダウングレードしておいてください。</li>
+
+
+
+<li>デベロッパーモードへの移行、または「Sh1ttyExec」が動作すること管理によってブロックされていても、今回の手順で突破を狙います。</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading">準備するもの</h3>
+
+
+
+<ul class="wp-block-list">
+<li><strong>USBメモリ</strong>（8GB以上。中身は空にしておいてください）</li>
+
+
+
+<li><strong>作業用PC</strong>（リカバリメディアを作成するために必要）</li>
+
+
+
+<li><strong>折れない心</strong>（一部の手順で非常にシビアなタイミングを要求されます）</li>
+</ul>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity" />
+
+
+
+<h3 class="wp-block-heading">QuickSilverの具体的な手順</h3>
+
+
+
+<h4 class="wp-block-heading">1. Kernverの確認</h4>
+
+
+
+<p class="wp-block-paragraph">まず「ESC + Refresh + 電源ボタン」を同時押ししてリカバリーモードに入ります。</p>
+
+
+
+<p class="wp-block-paragraph">画面が表示されたら Ctrl + i を押してください。画面上部に細かい端末情報が出てきますが、その中の kernver= の数字をチェック。これが 6以下 なら準備OKです。</p>
+
+
+
+<h4 class="wp-block-heading">2. カスタムイメージの作成</h4>
+
+
+
+<p class="wp-block-paragraph"><a href="https://unenrollment.com/GoodSilver/">unenrollment.com</a> などのサイトから、自分の端末のボード名に合った QuickSilver / GoodSilver ビルダーを入手します。</p>
+
+
+
+<p class="wp-block-paragraph">別のPCで「Chromebook リカバリ ユーティリティ」を立ち上げ、設定（歯車アイコン）の「ローカルイメージを使用」から、作成したイメージをUSBに焼き込みます。</p>
+
+
+
+<h4 class="wp-block-heading">3. Sh1ttyExecでガードを突破（Keyroll対策端末の場合）</h4>
+
+
+
+<p class="wp-block-paragraph">最近の対策済み端末（Keyrolled）は、そのままではカスタムUSBを受け付けません。</p>
+
+
+
+<ol start="1" class="wp-block-list">
+<li>セットアップ画面（Wi-Fi設定など）で <strong>Ctrl + Alt + Shift + R</strong> を押し、パワーウォッシュ（初期化）を実行します。</li>
+
+
+
+<li>再起動する瞬間の絶妙なタイミングで、強制的にデベロッパーモードへ移行させる操作を行います。</li>
+
+
+
+<li>成功して「OSの確認機能はオフになっています」という警告画面が出れば、第一関門突破です。</li>
+</ol>
+
+
+
+<h4 class="wp-block-heading">4. QuickSilverペイロードの発動</h4>
+
+
+
+<p class="wp-block-paragraph">作成したUSBを差し込み、メニューから 「QuickSilver」 を選択して実行します。</p>
+
+
+
+<p class="wp-block-paragraph">この時、裏側ではこんな処理が行われています。</p>
+
+
+
+<ul class="wp-block-list">
+<li><strong>VPD（製品データ）の書き換え</strong>: サーバーとの紐付けに使われる <code>re_enrollment_key</code> をランダムな値に書き換え、別の端末に見せかけます。</li>
+
+
+
+<li><strong>管理フラグの無効化</strong>: <code>check_enrollment=0</code> を書き込み、起動時に学校のサーバーへ見に行く挙動そのものを封じます。</li>
+</ul>
+
+
+
+<h4 class="wp-block-heading">5. 仕上げ</h4>
+
+
+
+<p class="wp-block-paragraph">スクリプトが「Success」と表示されたら再起動。</p>
+
+
+
+<p class="wp-block-paragraph">初期設定を進めていき、「管理されています」という画面が出ずに個人アカウントでログインできれば、自由の身です！</p>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity" />
+
+
+
+<h3 class="wp-block-heading">&#x26a0;&#xfe0f; 絶対に守るべき注意点</h3>
+
+
+
+<ul class="wp-block-list">
+<li><strong>アップデートは絶対にダメ！</strong>: v143以降はこの脆弱性が修正されています。一度アップデートすると、一瞬で組織の管理下に引き戻される（Re-enroll）危険があります。必ず <strong>CAUB</strong> 等を使って、自動更新を完全に止めてください。</li>
+
+
+
+<li><strong>すべては自己責任で</strong>: この操作はメーカー保証を捨て、最悪の場合端末を「文鎮（壊れた板）」にするリスクがあります。何が起きても自分で責任を取れる人だけ挑戦してください。</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading">最後に</h3>
+
+
+
+<p class="wp-block-paragraph">このツールを開発した Emery氏、Sophia氏、OlyB氏 たちの功績に感謝します。</p>
+
+
+
+<p class="wp-block-paragraph">分からないことがあれば、DiscordサーバーかGitHubのDiscussionで聞いてみてください。</p>
+
+
+
+<p class="wp-block-paragraph">それでは、良いChromebookライフを！</p>
+
+
+
+<p class="wp-block-paragraph">著者: Psan</p>
+
+
+
+<p class="wp-block-paragraph">（引用元: unenrollment.com）</p>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity" />
+
+元記事: <a href="https://blogbooks.net/chromebook/5338/">https://blogbooks.net/chromebook/5338/</a>
