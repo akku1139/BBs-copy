@@ -1,0 +1,148 @@
+{
+  "date": "2026-06-28T09:00:00",
+  "draft": false,
+  "params": {
+    "author": 47
+  },
+  "title": "V149~ ChromeOS拡張機能無効化",
+  "summary": "はじめに こんにちは。お久しぶりです。Psanです。 ようやく受験が終わったので久々に投稿します。 &#8230;",
+  "url": "/uncategorized/5401/",
+  "tag": [
+    "chromebook",
+    "ブロック回避",
+    "blockunlock",
+    "uncategorized"
+  ],
+  "category": [
+    "chromebook",
+    "ブロック回避",
+    "ブロック解除",
+    "未分類"
+  ]
+}
+
+<h1 class="wp-block-heading">はじめに</h1>
+
+
+
+<p class="wp-block-paragraph">こんにちは。お久しぶりです。Psanです。</p>
+
+
+
+<p class="wp-block-paragraph">ようやく受験が終わったので久々に投稿します。</p>
+
+
+
+<p class="wp-block-paragraph">長らく活動していなくて申し訳ないです。</p>
+
+
+
+<h2 class="wp-block-heading">nyameowxicillin: ChromeOS拡張機能無効化</h2>
+
+
+
+<p class="wp-block-paragraph">nyameowxicillinは、ChromeOSの crosh を介した管理外のファイル書き込み（Uncontrolled filewrite）を利用し、拡張機能の強制インストールを回避するエクスプロイトです。</p>
+
+
+
+<h3 class="wp-block-heading">&#x26a0;&#xfe0f; 重要事項</h3>
+
+
+
+<ul class="wp-block-list">
+<li><strong>対象バージョン:</strong> ChromeOS 149以降</li>
+
+
+
+<li><strong>リスク:</strong> この手順はOSの意図しない挙動を利用するため、デバイスが不安定になる可能性があります。<br>既知の脆弱性ですが、現時点ではパッチされてません。将来のアップデートで修正される可能性があります。</li>
+</ul>
+
+
+
+<h2 class="wp-block-heading">手順</h2>
+
+
+
+<ol class="wp-block-list">
+<li><strong>デバイスの初期化 (Powerwash)</strong></li>
+</ol>
+
+
+
+<ul class="wp-block-list">
+<li>CTRL + ALT + SHIFT + R を押下してデバイスをPowerwashします。</li>
+
+
+
+<li>または、開発者モードを有効にしてから無効にすることでも実行可能です。</li>
+</ul>
+
+
+
+<ol class="wp-block-list">
+<li><strong>初期セットアップ</strong></li>
+</ol>
+
+
+
+<ul class="wp-block-list">
+<li>画面の指示に従い、通常通りセットアップを進め、デバイスの登録を完了させます。</li>
+</ul>
+
+
+
+<ol class="wp-block-list">
+<li><strong>ネットワークの切断</strong></li>
+</ol>
+
+
+
+<ul class="wp-block-list">
+<li>アカウントにログインし、デスクトップが表示されたらすぐにWi-Fiをオフにします。</li>
+</ul>
+
+
+
+<ol class="wp-block-list">
+<li><strong>コマンドの実行</strong></li>
+</ol>
+
+
+
+<ul class="wp-block-list">
+<li>CTRL + ALT + T で crosh を開き、以下のコマンドを入力します。</li>
+</ul>
+
+
+
+<pre class="wp-block-code"><code>   vmc logs Extensions /home/chronos/user/Extensions</code></pre>
+
+
+
+<ol start="5" class="wp-block-list">
+<li><strong>ネットワークの再接続</strong></li>
+</ol>
+
+
+
+<ul class="wp-block-list">
+<li>Wi-Fiを再度有効にします。この操作により、拡張機能の自動インストールがブロックされます。</li>
+</ul>
+
+
+
+<p class="is-style-nishiki-blocks-pro-paragraph-warning-01 wp-block-paragraph"><strong>注記:</strong> この状態は、再度Powerwashを行うまで持続します。<br>その他拡張機能もインストールされませんのでご注意を。</p>
+
+
+
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<h2 class="wp-block-heading">クレジット</h2>
+
+
+
+<ul class="wp-block-list">
+<li><strong>Kelsea / crossystem</strong></li>
+</ul>
+</blockquote>
+
+元記事: <a href="https://blogbooks.net/uncategorized/5401/">https://blogbooks.net/uncategorized/5401/</a>
